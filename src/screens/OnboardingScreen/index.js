@@ -1,34 +1,40 @@
 import React, { Component } from 'react'
-
 import { View, Image, Text, Dimensions, TouchableOpacity } from 'react-native'
-import Images from '../../assets/images';
 import { FontAwesome } from "@expo/vector-icons";
+import Images from '../../assets/images';
 import Colors from '../../constants/Colors'
-const {width, height} = Dimensions.get('window')
+
+const { width } = Dimensions.get('window')
 export default class OnboardingScreen extends Component {
-    constructor() {
-        super()
-    }
+ 
 
     render() {
+        const { main } = Images.Onboarding
         return (
             <View style={styles.container}>
-                <View style={{flex:1, alignContent:'center', marginTop: 100}}>
+                <View style={styles.imageContainer}>
                     <View style={styles.centered}>
-                        <Image source={Images.Onboarding.main} style={{ width: 186.17, height: 201 }} />
+                        <Image source={main} style={styles.topImage} />
                     </View>
                 </View>
                 <View style={styles.centered}>
                     <Text style={styles.heading}>Reminders made simple</Text>
                     <View style={[styles.rowView, styles.centered]}>
                         <Text style={styles.heading}>just for You. </Text>
-                        <FontAwesome name="heart" size={20} color="red" style={{marginTop:2.5}}/>
+                        <FontAwesome
+                            name="heart"
+                            size={20}
+                            color="red"
+                            style={{ marginTop: 2.5 }}
+                        />
                     </View>
                 </View>
                 <View style={styles.descriptionContainer}>
-                    <Text style={styles.descriptionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque erat in blandit luctus.</Text>
+                    <Text style={styles.descriptionText}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque erat in blandit luctus.
+                    </Text>
                 </View>
-                <View style={{alignSelf: 'center',justifyContent: 'center', marginTop: 120}}>
+                <View style={styles.btnContainer}>
                     <TouchableOpacity style={styles.getStartedBtn}>
                         <Text style={styles.getStartedText}>Get Started</Text>
                     </TouchableOpacity>
@@ -40,40 +46,54 @@ export default class OnboardingScreen extends Component {
 }
 
 const styles = {
-    container: { 
-        flex: 1, 
-        justifyContent: 'center' 
+    btnContainer: {
+        alignSelf: 'center',
+        justifyContent: 'center',
+        marginTop: 120
     },
-    centered: { 
+    container: {
+        flex: 1,
+        justifyContent: 'center'
+    },
+    centered: {
         alignSelf: 'center'
     },
-    rowView: {
-        flexDirection: 'row', 
-    },
-    heading:{
-        fontSize:22, 
-        fontFamily:"rubik-medium"
-    },
-    descriptionContainer:{
-        alignSelf: 'center', 
-        width: width * 0.75, 
+    descriptionContainer: {
+        alignSelf: 'center',
+        width: width * 0.75,
         marginTop: 20
     },
-    descriptionText:{
-        textAlign: 'center', 
-        fontFamily:"opensans-regular"
+    descriptionText: {
+        textAlign: 'center',
+        fontFamily: "opensans-regular"
     },
-    getStartedBtn:{
-        width:258, 
-        height: 52, 
-        backgroundColor: Colors.onboardingBtnBackground, 
+    getStartedBtn: {
+        width: 258,
+        height: 52,
+        backgroundColor: Colors.onboardingBtnBackground,
         justifyContent: 'center', borderRadius: 10
     },
-    getStartedText:{
-        color:'white', 
-        fontSize: 15, 
-        textAlign: 'center', 
-        fontFamily:"opensans-regular", 
+    getStartedText: {
+        color: Colors.white,
+        fontSize: 15,
+        textAlign: 'center',
+        fontFamily: "opensans-regular",
         fontWeight: '700'
+    },
+    heading: {
+        fontSize: 22,
+        fontFamily: "rubik-medium"
+    },
+    imageContainer: {
+        flex: 1,
+        alignContent: 'center',
+        marginTop: 100
+    },
+    rowView: {
+        flexDirection: 'row',
+    },
+    topImage: {
+        width: 186.17,
+        height: 201
     }
 }
