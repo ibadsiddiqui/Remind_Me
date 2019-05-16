@@ -6,7 +6,7 @@ import Colors from '../../constants/Colors'
 
 const { width } = Dimensions.get('window')
 export default class OnboardingScreen extends Component {
- 
+
 
     render() {
         const { main } = Images.Onboarding
@@ -49,7 +49,8 @@ const styles = {
     btnContainer: {
         alignSelf: 'center',
         justifyContent: 'center',
-        marginTop: 120
+        marginTop: 120,
+        marginBottom: 20
     },
     container: {
         flex: 1,
@@ -65,13 +66,15 @@ const styles = {
     },
     descriptionText: {
         textAlign: 'center',
-        fontFamily: "opensans-regular"
+        fontFamily: "opensans-regular",
+        color: Colors.descriptionColor
     },
     getStartedBtn: {
         width: 258,
         height: 52,
         backgroundColor: Colors.onboardingBtnBackground,
-        justifyContent: 'center', borderRadius: 10
+        justifyContent: 'center',
+        borderRadius: 10
     },
     getStartedText: {
         color: Colors.white,
@@ -82,7 +85,8 @@ const styles = {
     },
     heading: {
         fontSize: 22,
-        fontFamily: "rubik-medium"
+        fontFamily: "rubik-medium",
+        color: Colors.headingColor
     },
     imageContainer: {
         flex: 1,
