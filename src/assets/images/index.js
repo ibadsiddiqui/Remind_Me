@@ -4,6 +4,7 @@ const Images = {
     },
     Dashboard: {
         emptyTodo: require('./screens/dashboard/EmptyTodo.png'),
+        header: require('./screens/dashboard/Header.png'),
     }
 }
 
