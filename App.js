@@ -38,6 +38,7 @@ export default class App extends React.Component {
         // to remove this if you are not using it in your app
         // 'space-mono': require('./src/assets/fonts/SpaceMono-Regular.ttf'),
         "rubik-medium": require('./src/assets/fonts/Rubik-Medium.ttf'),
+        "rubik-regular": require('./src/assets/fonts/Rubik-Regular.ttf'),
         "opensans-regular": require('./src/assets/fonts/OpenSans-Regular.ttf'),
       }),
     ]);
