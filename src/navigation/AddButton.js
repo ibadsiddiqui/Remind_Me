@@ -4,7 +4,7 @@ import Icon from '@expo/vector-icons/FontAwesome';
 import DisplayModal from './../components/Dashboard/DisplayModal';
 const SIZE = 80;
 
-class AddButton extends Component { 
+class AddButton extends Component {
     state = {
         modalVisible: false
     }
@@ -13,8 +13,8 @@ class AddButton extends Component {
         this.setState(prevState => ({
             modalVisible: !prevState.modalVisible
         }));
-      }
-    
+    }
+
     render() {
         console.log(this.state)
         return (
@@ -38,9 +38,9 @@ class AddButton extends Component {
                 >
                     <Icon name="plus" size={24} color="#F8F8F8" />
                 </TouchableHighlight>
-                <DisplayModal   
-                    data = "Krunal"
-                    modalVisible = { this.state.modalVisible }
+                <DisplayModal
+                    data="Krunal"
+                    modalVisible={this.state.modalVisible}
                 />
             </View>
         );
