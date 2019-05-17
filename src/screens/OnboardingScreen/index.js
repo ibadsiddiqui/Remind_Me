@@ -22,7 +22,7 @@ export default class OnboardingScreen extends Component {
                 <View style={styles.centered}>
                     <Text style={styles.heading}>{title1}</Text>
                     <View style={[styles.rowView, styles.centered]}>
-                        <Text style={styles.heading}>{title2}</Text>
+                        <Text style={styles.heading}>{title2} </Text>
                         <FontAwesome
                             name="heart"
                             size={20}
