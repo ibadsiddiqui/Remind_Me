@@ -10,7 +10,8 @@ const Images = {
 
 export const cachedImages = [
     require('./screens/onboarding/Onboarding.png'),
-    require('./screens/dashboard/EmptyTodo.png')
+    require('./screens/dashboard/EmptyTodo.png'),
+    require('./screens/dashboard/Header.png')
 ]
 
 export default Images
