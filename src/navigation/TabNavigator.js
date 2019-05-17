@@ -1,11 +1,12 @@
 import React from 'react';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
+import { createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
 import DashboardScreen from '../screens/DashboardScreen';
 import { Feather } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
-
+import { View } from 'react-native'
+import { AddButton } from './AddButton';
 const { activeTintColor, inactiveTintColor } = Colors
+
 const HomeStack = createStackNavigator({
     Home: DashboardScreen,
 }, {
@@ -47,7 +48,19 @@ const TaskStack = createStackNavigator({
     }
 );
 
+const AddTask = createSwitchNavigator({
+    Tasks: () => null,
+}, {
+        headerMode: "none",
+        navigationOptions: {
+            tabBarLabel: <View />,
+            tabBarIcon: () => (<AddButton />),
+        }
+    }
+);
+
 export default createBottomTabNavigator({
     HomeStack,
+    AddTask,
     TaskStack,
 });
