@@ -6,4 +6,5 @@ export default {
   inactiveTintColor: '#9F9F9F',
   onboardingBtnBackground: "#48B413",
   white: '#fff',
+  taskButton: "#F857C3"
 };
