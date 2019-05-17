@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, View } from "react-native";
-import Icon from '@expo/vector-icons/FontAwesome';
+import { View } from "react-native";
 import DisplayModal from './../components/Dashboard/DisplayModal';
-const SIZE = 80;
+import MainButton from '../components/General/MainButton';
 
 class AddButton extends Component {
     state = {
@@ -16,35 +15,27 @@ class AddButton extends Component {
     }
 
     render() {
-        console.log(this.state)
+
         return (
-            <View style={{
-                position: 'absolute',
-                alignItems: 'center'
-            }}>
-                <TouchableHighlight
-                    onPress={() => this.triggerModal()}
-                    underlayColor="#2882D8"
-                    style={{
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: SIZE - 20,
-                        height: SIZE - 20,
-                        borderRadius: SIZE / 2,
-                        backgroundColor: '#F857C3',
-                        marginBottom: 50,
-                        elevation: 10
-                    }}
-                >
-                    <Icon name="plus" size={24} color="#F8F8F8" />
-                </TouchableHighlight>
+            <View style={styles.container}>
+                <MainButton {...this.state}
+                    triggerModal={() => this.triggerModal()}
+                />
                 <DisplayModal
                     data="Krunal"
+                    {...this.state}
                     modalVisible={this.state.modalVisible}
+                    triggerModal={() => this.triggerModal()}
                 />
             </View>
         );
     }
 }
 
+const styles = {
+    container:{
+        position: 'absolute',
+        alignItems: 'center'
+    }
+}
 export { AddButton };
