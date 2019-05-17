@@ -3,13 +3,15 @@ import { View, Image, Text, Dimensions, TouchableOpacity } from 'react-native'
 import { FontAwesome } from "@expo/vector-icons";
 import Images from '../../assets/images';
 import Colors from '../../constants/Colors'
-
+import Locale from './../../constants/Locale'
 const { width } = Dimensions.get('window')
 export default class OnboardingScreen extends Component {
 
-
     render() {
-        const { main } = Images.Onboarding
+        const { main } = Images.Onboarding;
+        const { navigate } = this.props.navigation;
+        const { title1, title2, Desc } = Locale.Onboarding;
+
         return (
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
@@ -18,9 +20,9 @@ export default class OnboardingScreen extends Component {
                     </View>
                 </View>
                 <View style={styles.centered}>
-                    <Text style={styles.heading}>Reminders made simple</Text>
+                    <Text style={styles.heading}>{title1}</Text>
                     <View style={[styles.rowView, styles.centered]}>
-                        <Text style={styles.heading}>just for You. </Text>
+                        <Text style={styles.heading}>{title2}</Text>
                         <FontAwesome
                             name="heart"
                             size={20}
@@ -30,12 +32,13 @@ export default class OnboardingScreen extends Component {
                     </View>
                 </View>
                 <View style={styles.descriptionContainer}>
-                    <Text style={styles.descriptionText}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque erat in blandit luctus.
-                    </Text>
+                    <Text style={styles.descriptionText}>{Desc}</Text>
                 </View>
                 <View style={styles.btnContainer}>
-                    <TouchableOpacity style={styles.getStartedBtn}>
+                    <TouchableOpacity
+                        style={styles.getStartedBtn}
+                        onPress={() => navigate("Dashboard")}
+                    >
                         <Text style={styles.getStartedText}>Get Started</Text>
                     </TouchableOpacity>
                 </View>

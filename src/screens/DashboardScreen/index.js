@@ -8,7 +8,7 @@ const { width } = Dimensions.get('window')
 export default class DashboardScreen extends Component {
 
     render() {
-        const { emptyTodo, header } = Images.Dashboard
+        const { emptyTodo, header } = Images.Dashboard;
         return (
             <View style={styles.container}>
                 <ImageBackground source={header} style={styles.headerImage}>
@@ -20,7 +20,6 @@ export default class DashboardScreen extends Component {
                             </View>
                             <FontAwesome name="user-circle-o" size={40} color="white" />
                         </View>
-
                     </View>
                 </ImageBackground>
                 <View style={styles.imageContainer}>
