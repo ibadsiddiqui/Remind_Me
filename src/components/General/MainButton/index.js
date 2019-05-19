@@ -8,8 +8,6 @@ const SIZE = 80;
 
 const MainButton = (props) => {
     const { triggerModal, modalVisible } = props;
-    console.log(modalVisible);
-
     if (modalVisible === false)
         return (
             <TouchableHighlight
