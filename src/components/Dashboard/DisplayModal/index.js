@@ -1,10 +1,11 @@
 import React from 'react'
-import { Modal, Image, View, Text, Dimensions } from 'react-native';
+import { Modal, Image, TouchableHighlight, View, Text, Dimensions } from 'react-native';
 import Images from '../../../assets/images';
 
 import ListOfFlag from '../../General/ListofTag';
 import UserInput from './UserInput';
 import { ModalHeader, ModalHeading } from './ModalHeader';
+import Entypo from '@expo/vector-icons/Entypo';
 
 const { width } = Dimensions.get('window')
 
@@ -30,7 +31,25 @@ const DisplayModal = (props) => {
               <ListOfFlag />
             </View>
           </View>
-          <View style={{ flex: 3, alignSelf: 'stretch', flexDirection: 'row' }} />
+          <View style={{ flex: 3, alignSelf: 'stretch', flexDirection: 'row', }}>
+            <View style={{
+              flex: 3,
+              alignSelf: 'center',
+              alignItems: 'flex-start',
+              paddingHorizontal: 10,
+              marginTop: 40
+            }}>
+              <TouchableHighlight >
+                <View style={{ flex: 3, flexDirection: 'row' }}>
+                  <Text style={{ textAlign: 'center', fontFamily: "rubik-regular", fontSize: 13 }}>Choose date</Text>
+                  <Entypo
+                    name="chevron-small-down"
+                    size={20} color="black"
+                    style={{ marginLeft: 75, marginBottom: 5 }} />
+                </View>
+              </TouchableHighlight>
+            </View>
+          </View>
         </View>
       </View>
     </Modal >
