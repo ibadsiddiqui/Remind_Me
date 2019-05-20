@@ -43,7 +43,7 @@ const DisplayModal = (props) => {
                 <View style={{ flex: 3, flexDirection: 'row' }}>
                   <Text style={{ textAlign: 'center', fontFamily: "rubik-regular", fontSize: 13 }}>Choose date</Text>
                   <Entypo
-                    name="chevron-small-down"
+                    name="chevron-down"
                     size={20} color="black"
                     style={{ marginLeft: 75, marginBottom: 10 }}
                   />
@@ -53,7 +53,7 @@ const DisplayModal = (props) => {
           </View>
           <View style={{ flex: 1, paddingHorizontal: 10, alignSelf: 'flex-start', flexDirection: 'row', alignItems: 'flex-start' }}>
             <Text style={{ fontFamily: "rubik-medium", fontSize: 13, textAlign: 'center', marginTop: 2 }}> Today, 19:00 — 21:00 </Text>
-            <Entypo name="chevron-down" size={20} color="black" />
+            <Entypo name="chevron-down" size={20} color="black" style={{marginLeft:12.5}}/>
           </View>
           <View style={{ flex: 2 }} />
         </View>
