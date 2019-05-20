@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, View } from "react-native";
+import { TouchableHighlight, Platform } from "react-native";
 import Icon from '@expo/vector-icons/FontAwesome';
 import { Entypo } from '@expo/vector-icons';
 import Colors from '../../../constants/Colors';
@@ -42,7 +42,18 @@ const styles = {
         borderRadius: SIZE / 2,
         backgroundColor: Colors.taskButton,
         marginBottom: 50,
-        elevation: 10
+        ...Platform.select({
+            ios: {
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2.5 },
+                shadowOpacity: 0.5,
+                shadowRadius: 2,
+                elevation: 10,
+            },
+            android:{
+                elevation: 10
+            }
+        })
     }
 }
 
