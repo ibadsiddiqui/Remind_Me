@@ -1,5 +1,5 @@
 import React from 'react'
-import {  View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 
 
@@ -25,9 +25,9 @@ const styles = {
         alignItems: 'flex-start'
     },
     heading: {
-        fontFamily: "rubik-medium",
-        fontSize: 13,
         textAlign: 'center',
+        fontFamily: "rubik-regular",
+        fontSize: 13,
         marginTop: 2
     },
     time: {
@@ -35,10 +35,10 @@ const styles = {
         fontSize: 13,
         textAlign: 'center',
         marginTop: 2,
-        marginLeft: 15
+        marginLeft: 22
     },
     icon: {
-        marginLeft: 15,
+        marginLeft: 13,
         top: -2
     }
 }

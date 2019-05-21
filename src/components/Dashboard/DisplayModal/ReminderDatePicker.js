@@ -46,15 +46,11 @@ const styles = {
         fontSize: 13,
         textAlign: 'center',
         marginLeft: 25,
-        // marginTop: 2
+        top: 0
     },
     icon: {
-        // position:'absolute',
-        // left: 150,
-        // marginBottom:2
-        top:-2,
+        top: -2,
         marginLeft: 15,
-        // marginBottom: 20
     }
 }
 

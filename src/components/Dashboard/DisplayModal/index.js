@@ -25,8 +25,8 @@ const DisplayModal = (props) => {
           <ModalHeader {...props} />
           <ModalHeading />
           <UserInput />
-          <View style={{ flex: 0.5, alignSelf: 'stretch', flexDirection: 'row', }}>
-            <View style={{ flex: 1, alignSelf: 'center', alignItems: 'center' }}>
+          <View style={styles.listTopContainer}>
+            <View style={styles.listContainer}>
               <ListOfFlag />
             </View>
           </View>
@@ -53,6 +53,16 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center'
   },
+  listTopContainer: {
+    flex: 0.5,
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+  },
+  listContainer: {
+    flex: 1,
+    alignSelf: 'center',
+    alignItems: 'center'
+  }
 }
 
 export default DisplayModal;
