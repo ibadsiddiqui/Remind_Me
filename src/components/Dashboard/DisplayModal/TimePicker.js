@@ -35,7 +35,7 @@ const styles = {
         fontSize: 13,
         textAlign: 'center',
         marginTop: 2,
-        marginLeft: 25
+        marginLeft: 15
     },
     icon: {
         marginLeft: 15,
