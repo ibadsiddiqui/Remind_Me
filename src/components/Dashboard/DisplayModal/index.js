@@ -1,12 +1,11 @@
 import React from 'react'
-import { Modal, Image, TouchableHighlight, View, Text, Dimensions } from 'react-native';
+import { Modal, Image, View, Dimensions } from 'react-native';
 import Images from '../../../assets/images';
-
+import ReminderDatePicker from "./ReminderDatePicker";
 import ListOfFlag from '../../General/ListofTag';
 import UserInput from './UserInput';
 import { ModalHeader, ModalHeading } from './ModalHeader';
-import Entypo from '@expo/vector-icons/Entypo';
-
+import TimePicker from './TimePicker'
 const { width } = Dimensions.get('window')
 
 const DisplayModal = (props) => {
@@ -31,30 +30,8 @@ const DisplayModal = (props) => {
               <ListOfFlag />
             </View>
           </View>
-          <View style={{ flex: 1, alignSelf: 'stretch', flexDirection: 'row', }}>
-            <View style={{
-              flex: 1,
-              alignSelf: 'center',
-              alignItems: 'flex-start',
-              paddingHorizontal: 10,
-              marginTop: 40
-            }}>
-              <TouchableHighlight>
-                <View style={{ flex: 3, flexDirection: 'row' }}>
-                  <Text style={{ textAlign: 'center', fontFamily: "rubik-regular", fontSize: 13 }}>Choose date</Text>
-                  <Entypo
-                    name="chevron-down"
-                    size={20} color="black"
-                    style={{ marginLeft: 75, marginBottom: 10 }}
-                  />
-                </View>
-              </TouchableHighlight>
-            </View>
-          </View>
-          <View style={{ flex: 1, paddingHorizontal: 10, alignSelf: 'flex-start', flexDirection: 'row', alignItems: 'flex-start' }}>
-            <Text style={{ fontFamily: "rubik-medium", fontSize: 13, textAlign: 'center', marginTop: 2 }}> Today, 19:00 — 21:00 </Text>
-            <Entypo name="chevron-down" size={20} color="black" style={{marginLeft:12.5}}/>
-          </View>
+          <ReminderDatePicker />
+          <TimePicker />
           <View style={{ flex: 2 }} />
         </View>
       </View>
