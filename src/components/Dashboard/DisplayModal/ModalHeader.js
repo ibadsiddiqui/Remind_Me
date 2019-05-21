@@ -1,6 +1,7 @@
 import React from 'react'
-import { View,Text } from 'react-native';
+import { View, Text } from 'react-native';
 import MainButton from '../../General/MainButton';
+import Locale from '../../../constants/Locale';
 
 export const ModalHeader = (props) => {
     const { triggerModal } = props
@@ -14,10 +15,11 @@ export const ModalHeader = (props) => {
 }
 
 export const ModalHeading = () => {
+    const { modalHeading } = Locale.ModalTasks
     return (
         <View style={styles.headingRowContainer}>
             <View style={styles.headingContainer}>
-                <Text style={styles.addTaskHeading}>Add new tasks</Text>
+                <Text style={styles.addTaskHeading}>{modalHeading}</Text>
             </View>
         </View>
     )

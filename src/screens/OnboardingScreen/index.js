@@ -10,7 +10,7 @@ export default class OnboardingScreen extends Component {
     render() {
         const { main } = Images.Onboarding;
         const { navigate } = this.props.navigation;
-        const { title1, title2, Desc } = Locale.Onboarding;
+        const { title1, title2, Desc, getStartedText } = Locale.Onboarding;
 
         return (
             <View style={styles.container}>
@@ -39,7 +39,7 @@ export default class OnboardingScreen extends Component {
                         style={styles.getStartedBtn}
                         onPress={() => navigate("Dashboard")}
                     >
-                        <Text style={styles.getStartedText}>Get Started</Text>
+                        <Text style={styles.getStartedText}>{getStartedText}</Text>
                     </TouchableOpacity>
                 </View>
 

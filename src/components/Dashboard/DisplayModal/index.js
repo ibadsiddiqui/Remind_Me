@@ -19,7 +19,11 @@ const DisplayModal = (props) => {
     >
       <View style={styles.container}>
         <View style={styles.containerImage}>
-          <Image source={Images.modalBackground} style={{ width: width }} resizeMode="cover" />
+          <Image
+            source={Images.modalBackground}
+            style={{ width: width }}
+            resizeMode="cover"
+          />
         </View>
         <View style={styles.tableContainer}>
           <ModalHeader {...props} />
