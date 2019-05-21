@@ -30,12 +30,16 @@ function renderColoredCircle(color) {
             ...style,
             backgroundColor: '#3044F2'
         };
-        else if (color == "Shopping")
-        return{
+    else if (color == "Shopping")
+            return {
             ...style,
-            backgroundColor:"#F29130"
+            backgroundColor: "#F29130"
         }
-
+    else if (color == "Party")
+        return {
+            ...style,
+            backgroundColor: "#9BFFF8"
+        }
 }
 const ListOfFlag = (props) => {
     return (
@@ -69,6 +73,12 @@ const ListOfFlag = (props) => {
                 <View style={styles.reminderTypeContainer}>
                     <View style={renderColoredCircle("Shopping")} />
                     <Text style={styles.reminderTypeText}>Shopping</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity >
+                <View style={styles.reminderTypeContainer}>
+                    <View style={renderColoredCircle("Party")} />
+                    <Text style={styles.reminderTypeText}>Party</Text>
                 </View>
             </TouchableOpacity>
         </ScrollView>
