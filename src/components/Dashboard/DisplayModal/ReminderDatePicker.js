@@ -1,13 +1,17 @@
 import React from 'react'
 import { TouchableHighlight, View, Text } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
+import { toggleDatePicker } from '../../../Helpers/pickerhelpers';
 
 
 const ReminderDatePicker = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.chooseDateBtnContainer}>
-                <TouchableHighlight>
+                <TouchableHighlight
+                    underlayColor="transparent"
+                    onPress={() => toggleDatePicker()}
+                >
                     <View style={{ flex: 3, flexDirection: 'row' }}>
                         <Text style={styles.chooseDateBtnText}>Choose date: </Text>
                         <Text style={styles.dateText}>Today</Text>

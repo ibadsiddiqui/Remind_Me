@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, TouchableHighlight } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
+import { toggleTimePicker } from '../../../Helpers/pickerhelpers';
 
 
 
@@ -8,7 +9,9 @@ const TimePicker = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.heading}>Time: </Text>
-            <Text style={styles.time}>19:00 — 21:00 </Text>
+            <TouchableHighlight underlayColor="transparent" onPress={() => toggleTimePicker()}>
+                <Text style={styles.time}>19:00 — 21:00 </Text>
+            </TouchableHighlight>
             <Entypo
                 name="chevron-down"
                 size={20} color="black"
