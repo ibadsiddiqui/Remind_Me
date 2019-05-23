@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from "react-native";
-import DisplayModal from './../components/Dashboard/DisplayModal';
+import DisplayModal from '../components/Dashboard/DisplayModal';
 import MainButton from '../components/General/MainButton';
 
 class AddButton extends Component {

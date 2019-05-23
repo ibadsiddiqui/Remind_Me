@@ -29,11 +29,8 @@ const styles = {
         alignSelf: 'center'
     },
     headerContainer: {
-        // flex: 1,
         justifyContent: 'center',
-        // position:'absolute',
         top: 50
-        // height: 100
     },
     greeting: {
         fontFamily: "rubik-regular",
@@ -44,14 +41,10 @@ const styles = {
         flex: 1,
         width: width,
         height: 106,
-        // paddingHorizontal: 20
     },
     rowView: {
-        // flex: 1,
         flexDirection: 'row',
         paddingHorizontal: 20,
-        // position: 'absolute',
-        // bottom: 50
     },
     taskStatus: {
         fontFamily: "rubik-regular",

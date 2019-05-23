@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
-import DashboardScreen from '../screens/DashboardScreen';
+import HomeScreen from '../screens/HomeScreen';
+import TaskScreen from '../screens/TaskScreen'
 import { Feather } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import { View } from 'react-native'
@@ -8,7 +9,7 @@ import { AddButton } from './AddButton';
 const { activeTintColor, inactiveTintColor } = Colors
 
 const HomeStack = createStackNavigator({
-    Home: DashboardScreen,
+    Home: HomeScreen,
 }, {
         headerMode: "none",
         navigationOptions: {
@@ -30,7 +31,7 @@ const HomeStack = createStackNavigator({
 );
 
 const TaskStack = createStackNavigator({
-    Tasks: DashboardScreen,
+    Tasks: TaskScreen,
 }, {
         headerMode: "none",
         navigationOptions: {
