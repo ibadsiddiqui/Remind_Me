@@ -3,9 +3,9 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { conditionalCircle, conditionalImages } from '../../../../Helpers/styleHelpers';
 
 const Tab = (props) => {
-    const { key, item } = props
+    const { item } = props
     return (
-        <View style={styles.insideRowContainer} key={key}>
+        <View style={styles.insideRowContainer} key={item}>
             <TouchableOpacity style={styles.categoryBtn}>
                 <View style={styles.btnContainer}>
                     <View style={conditionalCircle(item)}>

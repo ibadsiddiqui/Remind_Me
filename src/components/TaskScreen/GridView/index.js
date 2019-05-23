@@ -12,13 +12,13 @@ const GridView = (props) => {
                 </View>
             </View>
             <View style={styles.rowContainer}>
-                {firstRow.map((item, key) => <Tab key={key} item={item} />)}
+                {firstRow.map((item, key) => <Tab item={item} />)}
             </View>
             <View style={styles.rowContainer}>
-                {secondRow.map((item, key) => <Tab key={key} item={item} />)}
+                {secondRow.map((item, key) => <Tab item={item} />)}
             </View>
             <View style={styles.rowContainer}>
-                {thirdRow.map((item, key) => <Tab key={key} item={item} />)}
+                {thirdRow.map((item, key) => <Tab item={item} />)}
             </View>
         </View>
     )
