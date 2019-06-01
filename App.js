@@ -2,10 +2,13 @@ import React from 'react';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './src/navigation/AppNavigator';
+import configureStore from "./src/redux/store";
+import { Provider } from "react-redux";
 import { cachedImages } from './src/assets/images';
 import firebaseConfig from './src/constants/Firebase';
 import * as firebase from 'firebase';
 
+const { store } = configureStore()
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
@@ -18,18 +21,22 @@ export default class App extends React.Component {
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
-        <AppLoading
-          startAsync={this._loadResourcesAsync}
-          onError={this._handleLoadingError}
-          onFinish={this._handleFinishLoading}
-        />
+        <Provider store={store.store}>
+          <AppLoading
+            startAsync={this._loadResourcesAsync}
+            onError={this._handleLoadingError}
+            onFinish={this._handleFinishLoading}
+          />
+        </Provider>
       );
     } else {
       return (
-        <View style={styles.container}>
-          <StatusBar hidden={true} />
-          <AppNavigator />
-        </View>
+        <Provider store={store.store}>
+          <View style={styles.container}>
+            <StatusBar hidden={true} />
+            <AppNavigator />
+          </View>
+        </Provider>
       );
     }
   }
