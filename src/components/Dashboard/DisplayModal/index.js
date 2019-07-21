@@ -30,10 +30,10 @@ const DisplayModal = (props) => {
         <View style={Layout.table}>
           <ModalHeader {...props} />
           <ModalHeading />
-          <UserInput />
+          <UserInput {...props} />
           <View style={styles.listTopContainer}>
             <View style={styles.listContainer}>
-              <ListOfFlag />
+              <ListOfFlag {...props} />
             </View>
           </View>
           <ReminderDatePicker />

@@ -3,11 +3,13 @@ import { View, Dimensions, TextInput } from 'react-native';
 
 const { width, height } = Dimensions.get('window')
 const UserInput = (props) => {
+    const { setTaskDescription } = props;
     return (
         <View style={styles.container}>
             <View style={styles.textInputContainer}>
                 <TextInput style={styles.textInput}
                     placeholder="Enter task here"
+                    onChangeText={(text) => setTaskDescription(text)}
                 />
             </View>
         </View>
