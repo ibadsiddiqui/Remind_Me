@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { View, ScrollView, Dimensions } from 'react-native';
 import Header from '../../components/Home/Header';
 import GridView from '../../components/TaskScreen/GridView';
-
+import { connect } from 'react-redux';
+import { mapStateToProps, mapDispatchToProps } from '../../redux/dispatchers';
 const { height } = Dimensions.get('window')
 
-export default class TaskScreen extends Component {
+class TaskScreen extends Component {
     constructor() {
         super();
         this.state = {
@@ -38,3 +39,4 @@ const styles = {
         justifyContent: 'center',
     },
 }
+export default connect(mapStateToProps, mapDispatchToProps)(TaskScreen)
