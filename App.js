@@ -31,7 +31,7 @@ export default class App extends React.Component {
       );
     } else {
       return (
-        <Provider store={store.store}>
+        <Provider store={store}>
           <View style={styles.container}>
             <StatusBar hidden={true} />
             <AppNavigator />
