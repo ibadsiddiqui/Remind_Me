@@ -5,9 +5,11 @@ import { createStore, combineReducers } from "redux";
 // import storage from "redux-persist/lib/storage"; 
 
 import CreateTaskReducer  from './../reducers/CreateTaskReducer'
+import TaskListReducer from "../reducers/TaskListRedcuer";
 
 const rootReducer = combineReducers({
   CreateTask: CreateTaskReducer,
+  TaskList: TaskListReducer,
 });
 
 const configureStore = () => {
