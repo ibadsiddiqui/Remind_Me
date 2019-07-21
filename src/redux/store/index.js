@@ -4,10 +4,10 @@ import { createStore, combineReducers } from "redux";
 // defaults to localStorage AsyncStorage for react-native
 // import storage from "redux-persist/lib/storage"; 
 
-import UserReducer  from './../reducers/UserReducer'
+import CreateTaskReducer  from './../reducers/CreateTaskReducer'
 
 const rootReducer = combineReducers({
-  Users: UserReducer,
+  CreateTask: CreateTaskReducer,
 });
 
 const configureStore = () => {
