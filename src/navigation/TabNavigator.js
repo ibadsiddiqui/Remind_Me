@@ -5,7 +5,7 @@ import TaskScreen from '../screens/TaskScreen'
 import { Feather } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import { View } from 'react-native'
-import { AddButton } from './AddButton';
+import AddButton from './AddButton';
 const { activeTintColor, inactiveTintColor } = Colors
 
 const HomeStack = createStackNavigator({

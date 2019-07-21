@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View } from "react-native";
 import DisplayModal from '../components/Dashboard/DisplayModal';
 import MainButton from '../components/General/MainButton';
+import { connect } from "react-redux";
+import { mapStateToProps, mapDispatchToProps } from '../redux/dispatchers';
 
 class AddButton extends Component {
     state = {
@@ -15,17 +17,17 @@ class AddButton extends Component {
     }
 
     render() {
-
+        const { modalVisible } = this.state
         return (
             <View style={styles.container}>
                 <MainButton {...this.state}
-                    triggerModal={() => this.triggerModal()}
+                    triggerModal={this.triggerModal}
                 />
                 <DisplayModal
                     data="Krunal"
                     {...this.state}
-                    modalVisible={this.state.modalVisible}
-                    triggerModal={() => this.triggerModal()}
+                    modalVisible={modalVisible}
+                    triggerModal={this.triggerModal}
                 />
             </View>
         );
@@ -33,9 +35,9 @@ class AddButton extends Component {
 }
 
 const styles = {
-    container:{
+    container: {
         position: 'absolute',
         alignItems: 'center'
     }
 }
-export { AddButton };
+export default connect(mapStateToProps, mapDispatchToProps)(AddButton)
