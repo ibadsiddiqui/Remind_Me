@@ -1,3 +1,6 @@
 
 export const SET_TASK_DESCRIPTION = "SET_TASK_DESCRIPTION";
+export const SET_TASK_FLAG = "SET_TASK_FLAG";
+export const SET_TASK_DATE = "SET_TASK_DATE";
+export const SET_TASK_TIME = 'SET_TASK_TIME';
 export const CREATE_TASK = "CREATE_TASK";
