@@ -1,4 +1,5 @@
 import { setTaskDescription, setTaskFlag, setTaskDate, setTaskTime } from "../actions/CreateTaskActions";
+import { createTask, setTaskList } from "../actions/TaskListActions";
 
 export const mapStateToProps = (state) => {
     return {
@@ -23,5 +24,11 @@ export const mapDispatchToProps = (dispatch) => {
         setTaskTime: (time) => {
             dispatch(setTaskTime(time))
         },
+        createTask: (task) => {
+            dispatch(createTask(task))
+        },
+        setList: (list) => {
+            dispatch(setTaskList(list))
+        }
     }
 };
