@@ -8,7 +8,7 @@ import { cachedImages } from './src/assets/images';
 import firebaseConfig from './src/constants/Firebase';
 import * as firebase from 'firebase';
 
-const { store } = configureStore()
+const store = configureStore().store
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
@@ -21,7 +21,7 @@ export default class App extends React.Component {
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
-        <Provider store={store.store}>
+        <Provider store={store}>
           <AppLoading
             startAsync={this._loadResourcesAsync}
             onError={this._handleLoadingError}

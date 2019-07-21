@@ -1,16 +1,18 @@
-import {SET_TASK_DESCRIPTION} from './../../contants/Types'
-const initialState = {
+import { SET_TASK_DESCRIPTION, CREATE_TASK } from './../../constants/Types'
 
+const initialState = {
+  task: ""
 };
 
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_EMAIL:
+    case SET_TASK_DESCRIPTION:
       return {
         ...state,
-        email: action.payload
+        task: action.payload
       };
-
+    case CREATE_TASK:
+      return state;
     default:
       return state;
   }
