@@ -66,6 +66,7 @@ const styles = {
   listTopContainer: {
     ...Layout.tableRow,
     flex: 0.5,
+    paddingBottom:10
   },
   listContainer: {
     flex: 1,
