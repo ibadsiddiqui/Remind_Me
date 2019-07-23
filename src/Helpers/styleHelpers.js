@@ -1,4 +1,5 @@
 import Images from "../assets/images";
+import Colors from "../constants/Colors";
 
 export function conditionalImages(category) {
     switch (category) {
@@ -29,32 +30,32 @@ export function conditionalCircle(category) {
         case "Personal":
             return {
                 ...style,
-                backgroundColor: "rgba(255,238,155,0.36)",
+                backgroundColor: Colors.personalCircce,
             };
         case "Work":
             return {
                 ...style,
-                backgroundColor: "rgba(181,255,155,0.36)",
+                backgroundColor: Colors.workCirlce,
             };
         case "Meeting":
             return {
                 ...style,
-                backgroundColor: "rgba(255,155,205,0.36)"
+                backgroundColor: Colors.meetingCirlce
             };
         case "Shopping":
             return {
                 ...style,
-                backgroundColor: "rgba(255,208,155,0.36)"
+                backgroundColor: Colors.shoppingCirlce
             };
         case "Party":
             return {
                 ...style,
-                backgroundColor: "rgba(155,255,248,0.36)",
+                backgroundColor: Colors.partyCirlce,
             };
         case "Study":
             return {
                 ...style,
-                backgroundColor: "rgba(245,155,255,0.36)"
+                backgroundColor: Colors.studyCirlce
             };
         default:
             break;

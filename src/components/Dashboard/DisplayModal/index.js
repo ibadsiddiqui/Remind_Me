@@ -36,12 +36,12 @@ const DisplayModal = (props) => {
               <ListOfFlag {...props} />
             </View>
           </View>
-          <ReminderDatePicker />
+          <ReminderDatePicker {...props} />
           <TimePicker />
           <View style={Layout.tableRow}>
             <View style={Layout.tableCellCentered()}>
               <TouchableOpacity onPress={() => { }}
-                style={[styles.getStartedBtn, Layout.centered]}
+                style={styles.getStartedBtn}
               >
                 <Text style={styles.getStartedText}>Submit</Text>
               </TouchableOpacity>
@@ -56,7 +56,7 @@ const DisplayModal = (props) => {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.2)',
+    backgroundColor: Colors.opaqueBackground,
     paddingTop: 100
   },
   containerImage: {
@@ -66,7 +66,7 @@ const styles = {
   listTopContainer: {
     ...Layout.tableRow,
     flex: 0.5,
-    paddingBottom:10
+    paddingBottom: 10
   },
   listContainer: {
     flex: 1,
@@ -78,9 +78,10 @@ const styles = {
     height: 52,
     backgroundColor: Colors.addTaskButton,
     justifyContent: 'center',
-    borderRadius: 10
+    borderRadius: 10,
+    ...Layout.centered
   },
-  getStartedText:{
+  getStartedText: {
     color: Colors.white,
     fontSize: 15,
     textAlign: 'center',

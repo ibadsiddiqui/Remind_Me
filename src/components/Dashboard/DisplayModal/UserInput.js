@@ -1,15 +1,17 @@
 import React from 'react'
 import { View, Dimensions, TextInput } from 'react-native';
+import Colors from '../../../constants/Colors';
 
 const { width, height } = Dimensions.get('window')
 const UserInput = (props) => {
-    const { setTaskDescription } = props;
+    const { setTaskDescription, taskDescription } = props;
     return (
         <View style={styles.container}>
             <View style={styles.textInputContainer}>
                 <TextInput style={styles.textInput}
                     placeholder="Enter task here"
                     onChangeText={(text) => setTaskDescription(text)}
+                    value={taskDescription}
                 />
             </View>
         </View>
@@ -35,8 +37,8 @@ const styles = {
         fontSize: 32,
         fontFamily: "rubik-regular",
         borderWidth: 1,
-        borderColor: "transparent",
-        borderBottomColor: "#CFCFCF"
+        borderColor: Colors.transparent,
+        borderBottomColor: Colors.inputBorders
     },
 }
 

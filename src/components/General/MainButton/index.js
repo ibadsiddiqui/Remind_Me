@@ -42,7 +42,7 @@ const styles = {
         marginBottom: 50,
         ...Platform.select({
             ios: {
-                shadowColor: '#000',
+                shadowColor: Colors.black,
                 shadowOffset: { width: 0, height: 2.5 },
                 shadowOpacity: 0.5,
                 shadowRadius: 2,

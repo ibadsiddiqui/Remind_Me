@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { conditionalCircle, conditionalImages } from '../../../../Helpers/styleHelpers';
+import Colors from '../../../../constants/Colors';
 
 const Tab = (props) => {
     const { item } = props
@@ -45,10 +46,10 @@ const styles = {
     btnText: {
         fontSize: 18,
         fontFamily: "rubik-medium",
-        color: "#686868",
+        color: Colors.categoryButtonsText,
     },
     headingNumberOfTask: {
-        color: "#A1A1A1",
+        color: Colors.taskCount,
         fontFamily: "rubik-regular",
         fontSize: 12,
         marginTop: 5

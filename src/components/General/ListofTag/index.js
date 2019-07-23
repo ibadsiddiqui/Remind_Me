@@ -112,8 +112,8 @@ const styles = {
     container: {
         width: width * 0.95,
         borderWidth: 1,
-        borderColor: "transparent",
-        borderBottomColor: "#CFCFCF",
+        borderColor: Colors.transparent,
+        borderBottomColor: Colors.inputBorders,
         paddingVertical: 2.5,
         height: 100
     },

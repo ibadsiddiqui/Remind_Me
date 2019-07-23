@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { cachedImages } from './src/assets/images';
 import firebaseConfig from './src/constants/Firebase';
 import * as firebase from 'firebase';
+import Colors from './src/constants/Colors';
 
 const store = configureStore().store
 export default class App extends React.Component {
@@ -71,6 +72,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
   },
 });

@@ -1,6 +1,8 @@
+import moment from 'moment'
+
 export const TaskCreationObject = {
     taskDescription: "",
     taskFlag: "",
-    taskDate: "",
+    taskDate: moment().calendar(),
     taskTime: "",
 };
