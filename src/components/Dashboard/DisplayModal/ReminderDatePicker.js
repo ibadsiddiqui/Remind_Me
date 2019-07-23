@@ -1,30 +1,29 @@
 import React from 'react'
 import { TouchableHighlight, View, Text } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
-import { toggleDatePicker } from '../../../Helpers/pickerhelpers';
-
+import { toggleDatePicker } from '../../../helpers/pickerhelpers';
 
 const ReminderDatePicker = (props) => {
+    const { taskDate } = props
     return (
         <View style={styles.container}>
             <View style={styles.chooseDateBtnContainer}>
-                <TouchableHighlight
-                    underlayColor="transparent"
-                    onPress={() => toggleDatePicker()}
+                <TouchableHighlight underlayColor="transparent"
+                    onPress={() => toggleDatePicker(props)}
                 >
                     <View style={{ flex: 3, flexDirection: 'row' }}>
                         <Text style={styles.chooseDateBtnText}>Choose date: </Text>
-                        <Text style={styles.dateText}>Today</Text>
-                        <Entypo
+                        <Text style={styles.dateText}>{
+                            taskDate.includes("/") ? taskDate :
+                                taskDate.slice(0, taskDate.indexOf("at"))}
+                        </Text>
+                        <Entypo size={20} color="black" style={styles.icon}
                             name="chevron-down"
-                            size={20} color="black"
-                            style={styles.icon}
                         />
                     </View>
                 </TouchableHighlight>
             </View>
         </View>
-
     )
 }
 const styles = {
