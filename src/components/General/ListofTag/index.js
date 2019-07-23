@@ -4,6 +4,8 @@ import Colors from '../../../constants/Colors';
 import Layout from '../../../constants/Layout';
 
 const { width } = Dimensions.get('window')
+const { transparent, personalFlag, meetingFlag, partyFlag, shoppingFlag, studyFlag, workFlag } = Colors;
+
 function renderColoredCircle(color) {
     style = {
         width: 20,
@@ -46,62 +48,61 @@ function renderColoredCircle(color) {
 
 const ListOfFlag = (props) => {
     const { setTaskFlag, taskFlag } = props;
-    const { transparent, personalFlag, meetingFlag, partyFlag, shoppingFlag, studyFlag, workFlag } = Colors;
-    let conditionForPersonal = taskFlag !== "Personal";
-    let conditionForWork = taskFlag !== "Work";
-    let conditionForStudy = taskFlag !== "Study";
-    let conditionForMeeting = taskFlag !== "Meeting";
-    let conditionForParty = taskFlag !== "Party";
-    let conditionForShopping = taskFlag !== "Shopping";
+    let conditionPersonal = taskFlag !== "Personal";
+    let conditionWork = taskFlag !== "Work";
+    let conditionStudy = taskFlag !== "Study";
+    let conditionMeeting = taskFlag !== "Meeting";
+    let conditionParty = taskFlag !== "Party";
+    let conditionShopping = taskFlag !== "Shopping";
     return (
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}
             style={styles.container}>
             <TouchableOpacity onPress={() => setTaskFlag("Personal")}
-                style={{ backgroundColor: conditionForPersonal ? transparent : personalFlag, ...Layout.centered, borderRadius: 5 }}
+                style={styles.personalBtn(conditionPersonal)}
             >
                 <View style={[styles.reminderTypeContainer]}>
-                    {conditionForPersonal && <View style={renderColoredCircle("Personal")} />}
-                    <Text style={styles.reminderTypeText(conditionForPersonal)}>Personal</Text>
+                    {conditionPersonal && <View style={renderColoredCircle("Personal")} />}
+                    <Text style={styles.reminderTypeText(conditionPersonal)}>Personal</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setTaskFlag("Work")}
-                style={{ backgroundColor: conditionForWork ? transparent : workFlag, ...Layout.centered, borderRadius: 5 }}
+                style={styles.workBtn(conditionWork)}
             >
                 <View style={styles.reminderTypeContainer}>
-                    {conditionForWork && <View style={renderColoredCircle("Work")} />}
-                    <Text style={styles.reminderTypeText(conditionForWork)}>Work</Text>
+                    {conditionWork && <View style={renderColoredCircle("Work")} />}
+                    <Text style={styles.reminderTypeText(conditionWork)}>Work</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setTaskFlag("Meeting")}
-                style={{ backgroundColor: conditionForMeeting ? transparent : meetingFlag, ...Layout.centered, borderRadius: 5 }}
+                style={styles.meetingBtn(conditionMeeting)}
             >
                 <View style={styles.reminderTypeContainer}>
-                    {conditionForMeeting && <View style={renderColoredCircle("Meeting")} />}
-                    <Text style={styles.reminderTypeText(conditionForMeeting)}>Meeting</Text>
+                    {conditionMeeting && <View style={renderColoredCircle("Meeting")} />}
+                    <Text style={styles.reminderTypeText(conditionMeeting)}>Meeting</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setTaskFlag("Study")}
-                style={{ backgroundColor: conditionForStudy ? transparent : studyFlag, ...Layout.centered, borderRadius: 5 }}
+                style={styles.studyBtn(conditionStudy)}
             >
                 <View style={styles.reminderTypeContainer}>
-                    {conditionForStudy && <View style={renderColoredCircle("Study")} />}
-                    <Text style={styles.reminderTypeText(conditionForStudy)}>Study</Text>
+                    {conditionStudy && <View style={renderColoredCircle("Study")} />}
+                    <Text style={styles.reminderTypeText(conditionStudy)}>Study</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setTaskFlag("Shopping")}
-                style={{ backgroundColor: conditionForShopping ? transparent : shoppingFlag, ...Layout.centered, borderRadius: 5 }}
+                style={styles.shoppingBtn(conditionShopping)}
             >
                 <View style={styles.reminderTypeContainer}>
-                    {conditionForShopping && <View style={renderColoredCircle("Shopping")} />}
-                    <Text style={styles.reminderTypeText(conditionForShopping)}>Shopping</Text>
+                    {conditionShopping && <View style={renderColoredCircle("Shopping")} />}
+                    <Text style={styles.reminderTypeText(conditionShopping)}>Shopping</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setTaskFlag("Party")}
-                style={{ backgroundColor: conditionForParty ? transparent : partyFlag, ...Layout.centered, borderRadius: 5 }}
+                style={styles.partyBtn(conditionParty)}
             >
                 <View style={styles.reminderTypeContainer}>
-                    {conditionForParty && <View style={renderColoredCircle("Party")} />}
-                    <Text style={styles.reminderTypeText(conditionForParty)}>Party</Text>
+                    {conditionParty && <View style={renderColoredCircle("Party")} />}
+                    <Text style={styles.reminderTypeText(conditionParty)}>Party</Text>
                 </View>
             </TouchableOpacity>
         </ScrollView>
@@ -120,6 +121,48 @@ const styles = {
         flex: 1,
         alignSelf: 'center',
         alignItems: 'center'
+    },
+    personalBtn: (condition) => {
+        return {
+            backgroundColor: condition ? transparent : personalFlag,
+            ...Layout.centered,
+            borderRadius: 5
+        }
+    },
+    workBtn: (condition) => {
+        return {
+            backgroundColor: condition ? transparent : workFlag,
+            ...Layout.centered,
+            borderRadius: 5
+        }
+    },
+    meetingBtn: (condition) => {
+        return {
+            backgroundColor: condition ? transparent : meetingFlag,
+            ...Layout.centered,
+            borderRadius: 5
+        }
+    },
+    studyBtn: (condition) => {
+        return {
+            backgroundColor: condition ? transparent : studyFlag,
+            ...Layout.centered,
+            borderRadius: 5
+        }
+    },
+    shoppingBtn: (condition) => {
+        return {
+            backgroundColor: condition ? transparent : shoppingFlag,
+            ...Layout.centered,
+            borderRadius: 5
+        }
+    },
+    partyBtn: (condition) => {
+        return {
+            backgroundColor: condition ? transparent : partyFlag,
+            ...Layout.centered,
+            borderRadius: 5
+        }
     },
     reminderTypeContainer: {
         marginHorizontal: 10,

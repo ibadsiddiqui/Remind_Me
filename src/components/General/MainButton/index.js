@@ -3,26 +3,24 @@ import { TouchableHighlight, Platform } from "react-native";
 import Icon from '@expo/vector-icons/FontAwesome';
 import { Entypo } from '@expo/vector-icons';
 import Colors from '../../../constants/Colors';
-// import DisplayModal from './../components/Dashboard/DisplayModal';
 const SIZE = 80;
 
 const MainButton = (props) => {
-    const { triggerModal, modalVisible } = props;
+    const { triggerModal, modalVisible, setTaskFlag } = props;
     if (modalVisible === false)
         return (
-            <TouchableHighlight
-                onPress={() => triggerModal()}
-                style={styles.button}
-            >
+            <TouchableHighlight style={styles.button} onPress={triggerModal}>
                 <Icon name="plus" size={24} color="white" />
             </TouchableHighlight>
         )
     else if (modalVisible === true)
         return (
             modalVisible === true &&
-            <TouchableHighlight
-                onPress={() => triggerModal()}
-                style={styles.button}
+            <TouchableHighlight style={styles.button}
+                onPress={() => {
+                    setTaskFlag('')
+                    triggerModal()
+                }}
             >
                 <Entypo name="cross" size={30} color="white" />
             </TouchableHighlight>
@@ -50,7 +48,7 @@ const styles = {
                 shadowRadius: 2,
                 elevation: 10,
             },
-            android:{
+            android: {
                 elevation: 10
             }
         })
