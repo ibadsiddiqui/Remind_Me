@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableHighlight } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
-import { toggleTimePicker } from '../../../Helpers/pickerhelpers';
+import { toggleTimePicker } from '../../../helpers/pickerhelpers';
 
 
 

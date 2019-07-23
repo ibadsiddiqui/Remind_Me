@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { conditionalCircle, conditionalImages } from '../../../../Helpers/styleHelpers';
+import { conditionalCircle, conditionalImages } from '../../../../helpers/styleHelpers';
 import Colors from '../../../../constants/Colors';
 
 const Tab = (props) => {
