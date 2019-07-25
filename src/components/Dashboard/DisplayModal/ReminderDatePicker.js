@@ -15,7 +15,7 @@ const ReminderDatePicker = (props) => {
                         <Text style={styles.chooseDateBtnText}>Choose date: </Text>
                         <Text style={styles.dateText}>{
                             taskDate.includes("/") ? taskDate :
-                                taskDate.slice(0, taskDate.indexOf("at"))}
+                                taskDate.slice(0, taskDate.indexOf(" at "))}
                         </Text>
                         <Entypo size={20} color="black" style={styles.icon}
                             name="chevron-down"
