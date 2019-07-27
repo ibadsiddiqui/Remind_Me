@@ -47,13 +47,14 @@ const styles = {
     dateText: {
         fontFamily: "rubik-medium",
         fontSize: 13,
-        textAlign: 'center',
+        width:80,
+        textAlign: 'left',
         marginLeft: 25,
         top: 0
     },
     icon: {
         top: -2,
-        marginLeft: 15,
+        marginLeft: 32.5,
     }
 }
 

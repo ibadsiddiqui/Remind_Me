@@ -5,33 +5,27 @@ import { toggleTimePicker } from '../../../helpers/pickerhelpers';
 import Layout from '../../../constants/Layout';
 
 const TimePicker = (props) => {
-    const { } = props;
+    const { taskStartTime } = props
     return (
         <View style={[Layout.tableRow, { paddingHorizontal: 10 }]}>
-            <View style={[Layout.tableCell,{flex:1.5}]}>
+            <View style={[Layout.tableCell, { flex: 1.25 }]}>
                 <Text style={styles.heading}>Start Time: </Text>
             </View>
-            <View style={[Layout.tableCell, { flex:1.35}]}>
-                <TouchableHighlight underlayColor="transparent" onPress={() => toggleTimePicker("start",props)}>
-                    <Text style={styles.time}>00:00 </Text>
+            <View style={[Layout.tableCell, { flex: 2.25 }]}>
+                <TouchableHighlight underlayColor="transparent" onPress={() => toggleTimePicker("start", props)}>
+                    <Text style={styles.time}>{taskStartTime === "" ? "00:00 A.M" : taskStartTime}</Text>
                 </TouchableHighlight>
             </View>
-            <TouchableHighlight style={[Layout.tableCell, 0.1]} underlayColor="transparent" onPress={() => toggleTimePicker(props)}>
-                <Entypo name="chevron-down" size={20} color="black"
-                    style={styles.icon} />
+            <TouchableHighlight style={[Layout.tableCell, { flex: 0.5 }]}
+                onPress={() => toggleTimePicker(props)}
+                underlayColor="transparent"
+            >
+                <View style={{width:50, marginLeft:15}}>
+                    <Entypo name="chevron-down" size={20} color="black"
+                        style={styles.icon} />
+                </View>
             </TouchableHighlight>
-            <View style={[Layout.tableCell,{flex:1.5}]}>
-                {/* <Text style={styles.heading}>End Time: </Text> */}
-            </View>
-            <View style={[Layout.tableCell, { flex:1.35}]}>
-                {/* <TouchableHighlight underlayColor="transparent" onPress={() =>{}}> */}
-                    {/* <Text style={styles.time}>19:00 </Text> */}
-                {/* </TouchableHighlight> */}
-            </View>
-            <View style={[Layout.tableCell, 0.1]} >
-                {/* <Entypo name="chevron-down" size={20} color="black"
-                    style={styles.icon} /> */}
-            </View>
+            <View style={{ flex: 3 }} />
         </View>
     )
 }
@@ -53,9 +47,10 @@ const styles = {
     time: {
         fontFamily: "rubik-medium",
         fontSize: 13,
+        width: 75,
         textAlign: 'center',
         marginTop: 2,
-        marginLeft: 22
+        marginLeft: 35
     },
     icon: {
         marginLeft: 13,
