@@ -23,8 +23,7 @@ class AddButton extends Component {
                 <MainButton {...this.state}
                     triggerModal={this.triggerModal}
                 />
-                <DisplayModal data="Krunal"
-                    {...this.state} {...this.props}
+                <DisplayModal {...this.state} {...this.props}
                     modalVisible={modalVisible}
                     triggerModal={this.triggerModal}
                 />
