@@ -23,17 +23,42 @@ export async function toggleDatePicker(props) {
     }
 };
 
-export async function toggleTimePicker() {
-    try {
-        const { action, hour, minute } = await TimePickerAndroid.open({
-            hour: 14,
-            minute: 0,
-            is24Hour: false, // Will display '2 PM'
-        });
-        if (action !== TimePickerAndroid.dismissedAction) {
-            // Selected hour (0-23), minute (0-59)
-        }
-    } catch ({ code, message }) {
-        console.warn('Cannot open time picker', message);
+export async function toggleTimePicker(type, props) {
+    switch (type) {
+        case "start":
+            try {
+                const { action, hour, minute } = await TimePickerAndroid.open({
+                    hour: 14,
+                    minute: 0,
+                    is24Hour: false, // Will display '2 PM'
+                });
+                if (action !== TimePickerAndroid.dismissedAction) {
+                    // Selected hour (0-23), minute (0-59)
+                    console.log(typeof hour, hour, typeof minute, minute);
+
+                }
+            } catch ({ code, message }) {
+                console.warn('Cannot open time picker', message);
+            }
+
+            break;
+        case "end":
+            try {
+                const { action, hour, minute } = await TimePickerAndroid.open({
+                    hour: 14,
+                    minute: 0,
+                    is24Hour: false, // Will display '2 PM'
+                });
+                if (action !== TimePickerAndroid.dismissedAction) {
+                    // Selected hour (0-23), minute (0-59)
+                }
+            } catch ({ code, message }) {
+                console.warn('Cannot open time picker', message);
+            }
+
+            break;
+
+        default:
+            break;
     }
 }
