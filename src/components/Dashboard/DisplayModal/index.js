@@ -8,6 +8,7 @@ import { ModalHeader, ModalHeading } from './ModalHeader';
 import TimePicker from './TimePicker'
 import Layout from '../../../constants/Layout';
 import Colors from '../../../constants/Colors';
+import TaskServices from '../../../services/Task';
 const { width } = Dimensions.get('window')
 
 const DisplayModal = (props) => {
@@ -40,7 +41,7 @@ const DisplayModal = (props) => {
           <TimePicker {...props} />
           <View style={Layout.tableRow}>
             <View style={Layout.tableCellCentered()}>
-              <TouchableOpacity onPress={() => { }}
+              <TouchableOpacity onPress={() => TaskServices.CreateTask(props)}
                 style={styles.getStartedBtn}
               >
                 <Text style={styles.getStartedText}>Submit</Text>
