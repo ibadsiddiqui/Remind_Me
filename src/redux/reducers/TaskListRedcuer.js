@@ -9,7 +9,7 @@ const TaskListReducer = (state = initialState, action) => {
         case CREATE_TASK:
             return {
                 ...state,
-                TaskList: [...action.payload]
+                ...state.TaskList.push(action.payload)
             };
         default:
             return state;
