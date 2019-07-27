@@ -13,7 +13,7 @@ const TimePicker = (props) => {
             </View>
             <View style={[Layout.tableCell, { flex: 2.25 }]}>
                 <TouchableHighlight underlayColor="transparent" onPress={() => toggleTimePicker("start", props)}>
-                    <Text style={styles.time}>{taskStartTime === "" ? "00:00 A.M" : taskStartTime}</Text>
+                    <Text style={styles.time}>{taskStartTime}</Text>
                 </TouchableHighlight>
             </View>
             <TouchableHighlight style={[Layout.tableCell, { flex: 0.5 }]}
