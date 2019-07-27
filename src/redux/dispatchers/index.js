@@ -1,4 +1,4 @@
-import { setTaskDescription, setTaskFlag, setTaskDate, setTaskTime } from "../actions/CreateTaskActions";
+import { setTaskDescription, setTaskFlag, setTaskDate, setTaskStartTime, setTaskEndTime } from "../actions/CreateTaskActions";
 import { createTask, setTaskList } from "../actions/TaskListActions";
 
 export const mapStateToProps = (state) => {
@@ -6,7 +6,8 @@ export const mapStateToProps = (state) => {
         taskDescription: state.CreateTask.taskDescription,
         taskFlag: state.CreateTask.taskFlag,
         taskDate: state.CreateTask.taskDate,
-        taskTime: state.CreateTask.taskTime,
+        taskStartTime: state.CreateTask.taskStartTime,
+        taskEndTime: state.CreateTask.taskEndTime,
     }
 }
 
@@ -21,8 +22,11 @@ export const mapDispatchToProps = (dispatch) => {
         setTaskDate: (date) => {
             dispatch(setTaskDate(date))
         },
-        setTaskTime: (time) => {
-            dispatch(setTaskTime(time))
+        setTaskStartTime: (time) => {
+            dispatch(setTaskStartTime(time))
+        },
+        setTaskEndTime: (time) => {
+            dispatch(setTaskEndTime(time))
         },
         createTask: (task) => {
             dispatch(createTask(task))
