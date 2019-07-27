@@ -13,10 +13,7 @@ const ReminderDatePicker = (props) => {
                 >
                     <View style={{ flex: 3, flexDirection: 'row' }}>
                         <Text style={styles.chooseDateBtnText}>Choose date: </Text>
-                        <Text style={styles.dateText}>{
-                            taskDate.includes("/") ? taskDate :
-                                taskDate.slice(0, taskDate.indexOf(" at "))}
-                        </Text>
+                        <Text style={styles.dateText}>{taskDate}</Text>
                         <Entypo size={20} color="black" style={styles.icon}
                             name="chevron-down"
                         />
@@ -47,7 +44,7 @@ const styles = {
     dateText: {
         fontFamily: "rubik-medium",
         fontSize: 13,
-        width:80,
+        width: 82,
         textAlign: 'left',
         marginLeft: 25,
         top: 0
