@@ -1,4 +1,4 @@
-import { SET_TASK_DESCRIPTION, SET_TASK_DATE, SET_TASK_FLAG, } from "../../constants/Types";
+import { SET_TASK_DESCRIPTION, SET_TASK_DATE, SET_TASK_FLAG, SET_TASK_START_TIME, SET_TASK_END_TIME, } from "../../constants/Types";
 
 export const setTaskDescription = (desc) => {
     return {
@@ -21,9 +21,16 @@ export const setTaskDate = (date) => {
     }
 }
 
-export const setTaskTime = (time) => {
+export const setTaskStartTime = (time) => {
     return {
-        type: SET_TASK_DATE,
+        type: SET_TASK_START_TIME,
+        payload: time
+    }
+}
+
+export const setTaskEndTime = (time) => {
+    return {
+        type: SET_TASK_END_TIME,
         payload: time
     }
 }

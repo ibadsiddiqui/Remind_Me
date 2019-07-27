@@ -1,4 +1,4 @@
-import { SET_TASK_DESCRIPTION, CREATE_TASK, SET_TASK_DATE, SET_TASK_TIME, SET_TASK_FLAG } from '../../constants/Types'
+import { SET_TASK_DESCRIPTION, CREATE_TASK, SET_TASK_DATE, SET_TASK_START_TIME, SET_TASK_END_TIME, SET_TASK_FLAG } from '../../constants/Types'
 import { TaskCreationObject } from '../../model/CreateTask.model';
 
 const initialState = {
@@ -22,10 +22,15 @@ const CreateTaskReducer = (state = initialState, action) => {
         ...state,
         taskDate: action.payload
       }
-    case SET_TASK_TIME:
+    case SET_TASK_START_TIME:
       return {
         ...state,
-        taskTime: action.payload
+        taskStartTime: action.payload
+      }
+    case SET_TASK_END_TIME:
+      return {
+        ...state,
+        taskEndTime: action.payload
       }
     case CREATE_TASK:
       return state;
