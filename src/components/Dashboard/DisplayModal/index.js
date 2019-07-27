@@ -37,7 +37,7 @@ const DisplayModal = (props) => {
             </View>
           </View>
           <ReminderDatePicker {...props} />
-          <TimePicker />
+          <TimePicker {...props} />
           <View style={Layout.tableRow}>
             <View style={Layout.tableCellCentered()}>
               <TouchableOpacity onPress={() => { }}
