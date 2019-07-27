@@ -1,7 +1,8 @@
-import { CREATE_TASK } from '../../constants/Types'
+import { CREATE_TASK, SET_DAYS } from '../../constants/Types'
 
 const initialState = {
-    TaskList: []
+    TaskList: [],
+    ListOfDaysSelected: new Set([])
 };
 
 const TaskListReducer = (state = initialState, action) => {
@@ -11,6 +12,12 @@ const TaskListReducer = (state = initialState, action) => {
                 ...state,
                 ...state.TaskList.push(action.payload)
             };
+        case SET_DAYS: {
+            return {
+                ...state,
+                ...state.ListOfDaysSelected.add(action.payload)
+            }
+        }
         default:
             return state;
     }

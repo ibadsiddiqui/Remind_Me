@@ -1,4 +1,4 @@
-import { CREATE_TASK } from "../../constants/Types";
+import { CREATE_TASK, SET_DAYS } from "../../constants/Types";
 
 export const createTask = (task) => {
     return {
@@ -6,3 +6,10 @@ export const createTask = (task) => {
         payload: task
     }
 }
+
+export const AddTaskDays = (day) => {
+    return {
+        type: SET_DAYS,
+        payload: day
+    }
+} 
