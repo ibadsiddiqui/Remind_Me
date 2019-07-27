@@ -5,6 +5,7 @@ export const SET_TASK_DATE = "SET_TASK_DATE";
 export const SET_TASK_END_TIME = 'SET_TASK_END_TIME';
 export const SET_TASK_START_TIME = 'SET_TASK_START_TIME';
 
-
+// for Task and Days List
 export const CREATE_TASK = "CREATE_TASK";
+export const SET_DAYS = "SET_DAYS"
 // export const SET_TASK_LIST /= "SET_TASK_LIST";
