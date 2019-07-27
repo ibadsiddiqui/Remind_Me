@@ -7,12 +7,22 @@ export async function toggleDatePicker(props) {
     try {
         const { action, year, month, day } = await DatePickerAndroid.open({
             date: new Date(),
+            minDate: new Date()
         });
         if (action !== DatePickerAndroid.dismissedAction) { // Selected year, month (0-11), day
-            if (month + 1 < 10)
-                setTaskDate(moment(moment(`${year}0${month + 1}${day}`, "YYYYMMDD")).calendar())
-            else
-                setTaskDate(moment(moment(`${year}${month + 1}${day}`, "YYYYMMDD")).calendar())
+            if (moment(moment(`${year}0${month + 1}${day}`, "YYYYMMDD")).calendar().includes(" at ")) {
+                if (month + 1 < 10) {
+                    let date = moment(moment(`${year}0${month + 1}${day}`, "YYYYMMDD")).calendar()
+                    setTaskDate(date.slice(0, date.indexOf(" at ")))
+                }
+                else {
+                    let date = moment(moment(`${year}${month + 1}${day}`, "YYYYMMDD")).calendar()
+                    setTaskDate(date.slice(0, date.indexOf(" at ")))
+                }
+            } else {
+                if (month + 1 < 10) setTaskDate(moment(moment(`${year}0${month + 1}${day}`, "YYYYMMDD")).calendar());
+                else setTaskDate(moment(moment(`${year}${month + 1}${day}`, "YYYYMMDD")).calendar());
+            }
         }
     } catch ({ code, message }) {
         console.warn('Cannot open date picker', message);
