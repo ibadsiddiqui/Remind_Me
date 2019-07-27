@@ -14,17 +14,13 @@ export async function toggleDatePicker(props) {
             else
                 setTaskDate(moment(moment(`${year}${month + 1}${day}`, "YYYYMMDD")).calendar())
         }
-        if (month + 1 < 10)
-            setTaskDate(moment(moment(`${year}0${month + 1}${day}`, "YYYYMMDD")).calendar())
-        else
-            setTaskDate(moment(moment(`${year}${month + 1}${day}`, "YYYYMMDD")).calendar())
-
     } catch ({ code, message }) {
         console.warn('Cannot open date picker', message);
     }
 };
 
 export async function toggleTimePicker(type, props) {
+    const { setTaskStartTime } = props;
     switch (type) {
         case "start":
             try {
@@ -35,8 +31,7 @@ export async function toggleTimePicker(type, props) {
                 });
                 if (action !== TimePickerAndroid.dismissedAction) {
                     // Selected hour (0-23), minute (0-59)
-                    console.log(hour24Converter(hour,minute));
-
+                    setTaskStartTime(hour24Converter(hour, minute));
                 }
             } catch ({ code, message }) {
                 console.warn('Cannot open time picker', message);
@@ -46,19 +41,18 @@ export async function toggleTimePicker(type, props) {
         case "end":
             try {
                 const { action, hour, minute } = await TimePickerAndroid.open({
-                    hour: 14,
-                    minute: 0,
+                    hour: new Date().getHours(),
+                    minute: new Date().getMinutes(),
                     is24Hour: false, // Will display '2 PM'
                 });
                 if (action !== TimePickerAndroid.dismissedAction) {
                     // Selected hour (0-23), minute (0-59)
+                    setTaskStartTime(hour24Converter(hour, minute));
                 }
             } catch ({ code, message }) {
                 console.warn('Cannot open time picker', message);
             }
-
             break;
-
         default:
             break;
     }
