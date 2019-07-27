@@ -1,5 +1,6 @@
 import { DatePickerAndroid, TimePickerAndroid } from 'react-native'
 import moment from 'moment';
+import { hour24Converter } from './timeConverter';
 
 export async function toggleDatePicker(props) {
     const { setTaskDate } = props;
@@ -28,13 +29,13 @@ export async function toggleTimePicker(type, props) {
         case "start":
             try {
                 const { action, hour, minute } = await TimePickerAndroid.open({
-                    hour: 14,
-                    minute: 0,
+                    hour: new Date().getHours(),
+                    minute: new Date().getMinutes(),
                     is24Hour: false, // Will display '2 PM'
                 });
                 if (action !== TimePickerAndroid.dismissedAction) {
                     // Selected hour (0-23), minute (0-59)
-                    console.log(typeof hour, hour, typeof minute, minute);
+                    console.log(hour24Converter(hour,minute));
 
                 }
             } catch ({ code, message }) {
