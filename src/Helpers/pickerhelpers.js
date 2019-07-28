@@ -1,5 +1,4 @@
 import { DatePickerAndroid, TimePickerAndroid } from 'react-native'
-import moment from 'moment';
 import { hour24Converter } from './timeConverter';
 import { checkDateAndSlice } from './stringHelper';
 
