@@ -43,9 +43,9 @@ export default class App extends React.Component {
   }
 
   _loadResourcesAsync = async () => {
-    return Promise.all([
-      Asset.loadAsync(cachedImages),
-      Font.loadAsync({
+
+    await Asset.loadAsync(cachedImages),
+      await Font.loadAsync({
         // This is the font that we are using for our tab bar
         ...Icon.Ionicons.font,
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
@@ -54,9 +54,8 @@ export default class App extends React.Component {
         "rubik-medium": require('./src/assets/fonts/Rubik-Medium.ttf'),
         "rubik-regular": require('./src/assets/fonts/Rubik-Regular.ttf'),
         "opensans-regular": require('./src/assets/fonts/OpenSans-Regular.ttf'),
-      }),
-    ]);
-  };
+      });
+  }
 
   _handleLoadingError = error => {
     // In this case, you might want to report the error to your error
