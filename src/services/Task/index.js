@@ -2,7 +2,8 @@ export default class TaskServices {
     constructor() { }
 
     static async CreateTask(props) {
-        const { taskDescription, taskFlag, taskDate, taskStartTime, taskEndTime, createTask, } = props;
+        const { taskDescription, taskFlag, taskDate, taskStartTime, taskEndTime, createTask, addTaskDays } = props;
+        addTaskDays(taskDate);
         await createTask({
             taskDescription,
             taskFlag,
