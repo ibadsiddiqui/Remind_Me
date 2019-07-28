@@ -4,23 +4,22 @@ import { FontAwesome } from "@expo/vector-icons";
 import Images from '../../../assets/images';
 import Colors from '../../../constants/Colors';
 import Locale from '../../../constants/Locale';
+import Layout from '../../../constants/Layout';
 const { width } = Dimensions.get('window');
 
 const Header = () => {
     const { header } = Images.Dashboard;
     return (
-        <View style={styles.headerImage}>
+        <View style={[Layout.tableRow]}>
             <Image source={header} style={{ width, position: 'absolute' }} />
-            <View style={[styles.headerContainer]}>
-                <View style={styles.rowView}>
-                    <View style={[{ flex: 1 }, styles.centered]}>
-                        <Text style={styles.greeting}>Hello Brenda!</Text>
-                        <Text style={styles.taskStatus}>{Locale.Tasks.NoTaskNotification}</Text>
-                    </View>
-                    <FontAwesome name="user-circle-o" size={40} color="white" />
-                </View>
+            <View style={[Layout.tableCell, { paddingHorizontal: 10, marginTop:width * 0.12 }]}>
+                <Text style={styles.greeting}>Hello Brenda!</Text>
+                <Text style={styles.taskStatus}>{Locale.Tasks.NoTaskNotification}</Text>
             </View>
-        </View>
+            <View style={[Layout.tableCell, { alignItems: 'flex-end', paddingHorizontal:10 , marginTop:width * 0.12}]}>
+                <FontAwesome name="user-circle-o" size={40} color="white" />
+            </View>
+        </View >
     )
 };
 
