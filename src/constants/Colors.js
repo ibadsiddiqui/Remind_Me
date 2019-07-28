@@ -29,4 +29,5 @@ export default {
   ////////////////////////////////
   opaqueBackground: 'rgba(0,0,0,0.2)',
   inputBorders: "#CFCFCF",
+  uncheckedCirlce: "#B5B5B5"
 };
