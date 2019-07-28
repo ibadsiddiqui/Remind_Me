@@ -6,7 +6,7 @@ import Layout from '../../../constants/Layout';
 const { width } = Dimensions.get('window')
 const { transparent, personalFlag, meetingFlag, partyFlag, shoppingFlag, studyFlag, workFlag } = Colors;
 
-function renderColoredCircle(color) {
+export function renderColoredCircle(color) {
     style = {
         width: 20,
         height: 20,
