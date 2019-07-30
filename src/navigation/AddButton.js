@@ -14,7 +14,10 @@ class AddButton extends Component {
     triggerModal = () => {
         this.setState(prevState => ({
             modalVisible: !prevState.modalVisible
-        }), () => TaskServices.ResetTaskDetails(this.props));
+        }), () => {
+            if (this.state.modalVisible === false)
+                TaskServices.ResetTaskDetails(this.props)
+        });
     }
 
     render() {

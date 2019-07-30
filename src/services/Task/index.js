@@ -1,11 +1,13 @@
 import moment from "moment";
+import { replaceTaskTimeWithStartTime } from "../../helpers/timeConverter";
 export default class TaskServices {
     constructor() { }
 
     static async CreateTask(props) {
-        const { taskDescription, taskFlag, taskDate, taskStartTime, taskEndTime, createTask, addTaskDays } = props;
+        const { taskDescription, taskFlag, taskDate, taskStartTime, taskEndTime, createTask, addTaskDays, triggerModal } = props;
+        await replaceTaskTimeWithStartTime(props)
         let date = moment(taskDate).calendar();
-        date = date.includes(" at ") ? date.slice(0, date.indexOf(" at ")) : date
+        date = date.includes(" at ") ? date.slice(0, date.indexOf(" at ")) : date;
         if (taskDescription) {
             addTaskDays(date);
             await createTask({
@@ -16,7 +18,7 @@ export default class TaskServices {
                 taskEndTime,
             });
         }
-        console.log(props);
+        triggerModal(); // to toggle the create task modal
         TaskServices.ResetTaskDetails(props);
     }
 
