@@ -1,5 +1,5 @@
 
-export default {
+const Colors = {
   transparent: "transparent",
   activeTintColor: "#5F87E7",
   descriptionColor: "#82A0B7",
@@ -31,3 +31,44 @@ export default {
   inputBorders: "#CFCFCF",
   uncheckedCirlce: "#B5B5B5"
 };
+export default Colors;
+
+export function renderColoredCircle(color) {
+  style = {
+      width: 20,
+      height: 20,
+      borderRadius: 20,
+      marginHorizontal: 5
+  };
+  if (color == "Personal")
+      return {
+          ...style,
+          backgroundColor: Colors.personalFlag
+      };
+  else if (color == "Work")
+      return {
+          ...style,
+          backgroundColor: Colors.workFlag
+      };
+  else if (color == "Meeting")
+      return {
+          ...style,
+          backgroundColor: Colors.meetingFlag
+      };
+
+  else if (color == "Study")
+      return {
+          ...style,
+          backgroundColor: Colors.studyFlag
+      };
+  else if (color == "Shopping")
+      return {
+          ...style,
+          backgroundColor: Colors.shoppingFlag
+      }
+  else if (color == "Party")
+      return {
+          ...style,
+          backgroundColor: Colors.partyFlag
+      }
+}

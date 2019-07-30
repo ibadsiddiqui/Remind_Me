@@ -14,18 +14,14 @@ const { width } = Dimensions.get('window')
 const DisplayModal = (props) => {
   const { modalVisible } = props
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={modalVisible}
+    <Modal transparent={true} visible={modalVisible}
+      animationType="fade"
       onRequestClose={() => { }}
     >
       <View style={styles.container}>
         <View style={styles.containerImage}>
-          <Image
+          <Image style={{ width }} resizeMode="cover"
             source={Images.modalBackground}
-            style={{ width: width }}
-            resizeMode="cover"
           />
         </View>
         <View style={Layout.table}>
@@ -39,7 +35,7 @@ const DisplayModal = (props) => {
           </View>
           <ReminderDatePicker {...props} />
           <TimePicker {...props} />
-          <View style={Layout.tableRow}>
+          <View style={[Layout.tableRow, { flex: 0.1 }]}>
             <View style={Layout.tableCellCentered()}>
               <TouchableOpacity onPress={() => TaskServices.CreateTask(props)}
                 style={styles.getStartedBtn}
@@ -66,7 +62,6 @@ const styles = {
   },
   listTopContainer: {
     ...Layout.tableRow,
-    flex: 0.5,
     paddingBottom: 10
   },
   listContainer: {

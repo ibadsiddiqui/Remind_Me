@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { MaterialIcons } from '@expo/vector-icons'
-import { View, Text, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Colors from '../../../constants/Colors';
 import Layout from '../../../constants/Layout';
-import { renderColoredCircle } from '../../../components/General/ListofTag';
-
-const { width } = Dimensions.get('window')
+import styles from './styles';
 
 const TaskListItems = (props) => {
     const { index, item } = props
@@ -24,31 +22,6 @@ const TaskListItems = (props) => {
             </TouchableOpacity>
         </View>
     )
-}
-
-const styles = {
-    container: { flex: 1, marginTop: 16 },
-    iconContainer: { ...Layout.tableCell, justifyContent: 'center', flex: 0.1 },
-    headingTxt: { fontSize: 14.5, fontFamily: "rubik-medium", color: Colors.headingColor },
-    timeDateContainer: { ...Layout.tableCell, justifyContent: 'center', flex: 0.3 },
-    timeDateTxt: { fontSize: 12, color: Colors.inactiveTintColor, fontFamily: "rubik-regular" },
-    styledRow: (flag) => {
-        return {
-            width: width * 0.9,
-            height: 55.21,
-            paddingTop: 5,
-            borderWidth: 0.5,
-            borderLeftWidth: 5,
-            borderLeftColor: renderColoredCircle(flag).backgroundColor,
-            borderTopColor: Colors.transparent,
-            borderBottomColor: Colors.transparent,
-            borderRightColor: Colors.transparent,
-            elevation: 1,
-            paddingHorizontal: 10,
-            borderRadius: 5,
-            alignSelf: 'center',
-        }
-    }
 }
 
 export default TaskListItems;
