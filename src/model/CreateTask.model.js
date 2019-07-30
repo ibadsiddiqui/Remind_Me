@@ -3,7 +3,8 @@ import moment from 'moment'
 export const TaskCreationObject = {
     taskDescription: "",
     taskFlag: "",
-    taskDate: moment().calendar().slice(0, moment().calendar().indexOf(" at ")),
+    taskDate: new Date().toLocaleString(),
     taskStartTime: "00:00 A.M",
     taskEndTime: "",
+    completed: false,
 };
