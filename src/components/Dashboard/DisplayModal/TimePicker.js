@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Text, TouchableHighlight, Dimensions } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { toggleTimePicker } from '../../../helpers/pickerhelpers';
 import Layout from '../../../constants/Layout';
@@ -7,8 +7,8 @@ import Layout from '../../../constants/Layout';
 const TimePicker = (props) => {
     const { taskStartTime } = props
     return (
-        <View style={[Layout.tableRow, { paddingHorizontal: 10 }]}>
-            <View style={[Layout.tableCell, { flex: 1.25 }]}>
+        <View style={[Layout.tableRow, { paddingHorizontal: 10, alignSelf: 'flex-start' }]}>
+            <View style={[Layout.tableCell, { flex: 1.4 }]}>
                 <Text style={styles.heading}>Start Time: </Text>
             </View>
             <View style={[Layout.tableCell, { flex: 2.25 }]}>
@@ -17,10 +17,10 @@ const TimePicker = (props) => {
                 </TouchableHighlight>
             </View>
             <TouchableHighlight style={[Layout.tableCell, { flex: 0.5 }]}
-                onPress={() => toggleTimePicker(props)}
                 underlayColor="transparent"
+                onPress={() => toggleTimePicker(props)}
             >
-                <View style={{width:50, marginLeft:15}}>
+                <View style={{ width: 50, marginLeft: 15 }}>
                     <Entypo name="chevron-down" size={20} color="black"
                         style={styles.icon} />
                 </View>
@@ -47,13 +47,14 @@ const styles = {
     time: {
         fontFamily: "rubik-medium",
         fontSize: 13,
-        width: 75,
-        textAlign: 'center',
+        width: Dimensions.get('window').width * 0.3,
+        textAlign: 'left',
         marginTop: 2,
-        marginLeft: 35
+        marginLeft: 25,
+        paddingLeft: 10
     },
     icon: {
-        marginLeft: 13,
+        marginLeft: Dimensions.get('window').width * 0.075,
         top: -2
     }
 }

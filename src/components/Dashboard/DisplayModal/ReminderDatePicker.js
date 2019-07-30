@@ -2,24 +2,35 @@ import React from 'react'
 import { TouchableHighlight, View, Text } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { toggleDatePicker } from '../../../helpers/pickerhelpers';
+import moment from 'moment';
+import Layout from '../../../constants/Layout';
+import Colors from '../../../constants/Colors';
 
 const ReminderDatePicker = (props) => {
-    const { taskDate } = props
+    const { taskDate } = props;
+    const date = moment(taskDate).calendar();
     return (
-        <View style={styles.container}>
-            <View style={styles.chooseDateBtnContainer}>
-                <TouchableHighlight underlayColor="transparent"
-                    onPress={() => toggleDatePicker(props)}
-                >
-                    <View style={{ flex: 3, flexDirection: 'row' }}>
-                        <Text style={styles.chooseDateBtnText}>Choose date: </Text>
-                        <Text style={styles.dateText}>{taskDate}</Text>
-                        <Entypo size={20} color="black" style={styles.icon}
-                            name="chevron-down"
-                        />
-                    </View>
+        <View style={[Layout.tableRow, { paddingHorizontal: 10, }]}>
+            <View style={[Layout.tableCell, { flex: 1.4 }]}>
+                <Text style={styles.heading}>Choose date: </Text>
+            </View>
+            <View style={[Layout.tableCell, { flex: 2.25 }]}>
+                <TouchableHighlight underlayColor="transparent" onPress={() => toggleDatePicker(props)}>
+                    <Text style={styles.dateText}>
+                        {date.includes(" at ") ? date.slice(0, date.indexOf(" at ")) : date}
+                    </Text>
                 </TouchableHighlight>
             </View>
+            <TouchableHighlight style={[Layout.tableCell, { flex: 0.5 }]}
+                onPress={() => toggleDatePicker(props)}
+                underlayColor="transparent"
+            >
+                <View style={{ width: 50, marginLeft: 15 }}>
+                    <Entypo name="chevron-down" size={20} color={Colors.black}
+                        style={styles.icon} />
+                </View>
+            </TouchableHighlight>
+            <View style={{ flex: 3 }} />
         </View>
     )
 }
@@ -28,6 +39,13 @@ const styles = {
         flex: 1,
         alignSelf: 'stretch',
         flexDirection: 'row',
+    },
+    heading: {
+        textAlign: 'left',
+        width: 100,
+        fontFamily: "rubik-regular",
+        fontSize: 13,
+        marginTop: 2
     },
     chooseDateBtnContainer: {
         flex: 1,
@@ -44,14 +62,15 @@ const styles = {
     dateText: {
         fontFamily: "rubik-medium",
         fontSize: 13,
-        width: 82,
+        width: Layout.window.width * 0.3,
         textAlign: 'left',
+        marginTop: 2,
         marginLeft: 25,
-        top: 0
+        paddingLeft: 10
     },
     icon: {
         top: -2,
-        marginLeft: 32.5,
+        marginLeft: Layout.window.width * 0.075,
     }
 }
 
