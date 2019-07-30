@@ -4,6 +4,7 @@ import DisplayModal from '../components/Dashboard/DisplayModal';
 import MainButton from '../components/General/MainButton';
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from '../redux/dispatchers';
+import TaskServices from '../services/Task';
 
 class AddButton extends Component {
     state = {
@@ -13,7 +14,7 @@ class AddButton extends Component {
     triggerModal = () => {
         this.setState(prevState => ({
             modalVisible: !prevState.modalVisible
-        }));
+        }), () => TaskServices.ResetTaskDetails(this.props));
     }
 
     render() {
