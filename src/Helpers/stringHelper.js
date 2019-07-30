@@ -2,11 +2,23 @@ import moment from "moment";
 
 export function checkDateAndSlice(year, month, day) {
     if (moment(moment(`${year}0${month + 1}${day}`, "YYYYMMDD")).calendar().includes(" at ")) {
-        if (month + 1 < 10) return new Date(`${year}/0${month + 1}/${day}`).toLocaleString();
-        else return new Date(`${year}/${month + 1}/${day}`).toLocaleString();
+        if (month + 1 < 10) {
+            if (day < 10) return new Date(`0${month + 1}/0${day}/${year}`).toLocaleString();
+            else return new Date(`0${month + 1}/${day}/${year}`).toLocaleString();
+        }
+        else {
+            if (day < 10) return new Date(`${month + 1}/0${day}/${year}`).toLocaleString();
+            else return new Date(`${month + 1}/${day}/${year}`).toLocaleString();
+        }
     } else {
-        if (month + 1 < 10) return new Date(`${year}/0${month + 1}/${day}`).toLocaleString();
-        else return new Date(`${year}/${month + 1}/${day}`).toLocaleString();
+        if (month + 1 < 10) {
+            if (day < 10) return new Date(`0${month + 1}/0${day}/${year}`).toLocaleString();
+            else return new Date(`0${month + 1}/${day}/${year}`).toLocaleString();
+        }
+        else {
+            if (day < 10) new Date(`${month + 1}/0${day}/${year}`).toLocaleString();
+            else new Date(`${month + 1}/${day}/${year}`).toLocaleString();
+        }
     }
 }
 
