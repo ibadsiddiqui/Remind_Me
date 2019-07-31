@@ -1,6 +1,7 @@
-import moment from 'moment'
+import { getRandomID } from "../helpers/stringHelper";
 
 export const TaskCreationObject = {
+    taskID: getRandomID(),
     taskDescription: "",
     taskFlag: "",
     taskDate: new Date().toLocaleString(),
