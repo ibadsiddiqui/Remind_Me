@@ -1,4 +1,5 @@
 import moment from "moment";
+const uuid4 = require('uuid/v4');
 
 export function checkDateAndSlice(year, month, day) {
     if (moment(moment(`${year}0${month + 1}${day}`, "YYYYMMDD")).calendar().includes(" at ")) {
@@ -28,4 +29,8 @@ export function comparingWithAt(item1, item2) {
 
 export function comparingWithOutAt(item1, item2) {
     return item1 !== moment(item2.taskDate).calendar();
+}
+
+export function getRandomID() {
+    return uuid4();
 }
