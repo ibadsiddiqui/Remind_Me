@@ -1,14 +1,14 @@
 import { createStore, combineReducers } from "redux";
-// import { persistStore, persistReducer } from "redux-persist";
+import { persistStore, persistReducer } from "redux-persist";
 
-// defaults to localStorage AsyncStorage for react-native
 // import storage from "redux-persist/lib/storage"; 
 
-import CreateTaskReducer  from './../reducers/CreateTaskReducer'
+import CreateTaskReducer from './../reducers/CreateTaskReducer'
 import TaskListReducer from "../reducers/TaskListRedcuer";
+import { persistConfigForTaskList } from "../../constants/persistConfig";
 
 const rootReducer = combineReducers({
-  CreateTask: CreateTaskReducer,
+  CreateTask: persistReducer(persistConfigForTaskList, CreateTaskReducer),
   TaskList: TaskListReducer,
 });
 
