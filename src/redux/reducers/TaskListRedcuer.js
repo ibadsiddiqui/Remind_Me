@@ -10,12 +10,12 @@ const TaskListReducer = (state = initialState, action) => {
         case CREATE_TASK:
             return {
                 ...state,
-                ...state.TaskList.push(action.payload)
+                TaskList: [...state.TaskList, action.payload],
             };
         case SET_DAYS: {
             return {
                 ...state,
-                ...state.ListOfDaysSelected.add(action.payload)
+                ListOfDaysSelected: new Set([...state.ListOfDaysSelected, action.payload])
             }
         }
         default:
