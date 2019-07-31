@@ -1,7 +1,7 @@
 export function hour24Converter(hour, minute) {
     if (hour > 9) {
-        if (hour === 10 || hour === 10 ) {
-            if (minute > 9) time =  (hour % 12).toString() + ":" + minute.toString() + " P.M";
+        if (hour <= 23 && hour > 21) {
+            if (minute > 9) time = (hour % 12).toString() + ":" + minute.toString() + " P.M";
             else time = (hour % 12).toString() + ":0" + minute.toString() + " P.M";
         } else {
             if (minute > 9) time = "0" + (hour % 12).toString() + ":" + minute.toString() + " P.M";
@@ -11,8 +11,6 @@ export function hour24Converter(hour, minute) {
         if (minute > 9) time = "0" + hour.toString() + ":" + minute.toString() + " A.M";
         else time = "0" + hour.toString() + ":0" + minute.toString() + " A.M";
     }
-    console.log(time);
-
     return time; // return adjusted time or original string
 }
 
