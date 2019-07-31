@@ -26,7 +26,7 @@ export default class TaskListGenerator extends React.PureComponent {
                                 if (conditionOne && conditionTwo)
                                     return null
                                 else return (
-                                    <TaskListItems item={_item} index={_index} />
+                                    <TaskListItems item={_item} key={_index} />
                                 )
                             })
                         }

@@ -6,9 +6,9 @@ import Layout from '../../../constants/Layout';
 import styles from './styles';
 
 const TaskListItems = (props) => {
-    const { index, item } = props
+    const { item } = props
     return (
-        <View style={styles.container} key={index}>
+        <View style={styles.container}>
             <TouchableOpacity style={[Layout.tableRow, styles.styledRow(item.taskFlag)]}>
                 <View style={styles.iconContainer}>
                     <MaterialIcons name="radio-button-unchecked" color={Colors.uncheckedCirlce} size={20} />
