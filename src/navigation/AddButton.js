@@ -5,10 +5,16 @@ import MainButton from '../components/General/MainButton';
 import { connect } from "react-redux";
 import { mapStateToProps, mapDispatchToProps } from '../redux/dispatchers';
 import TaskServices from '../services/Task';
+import { replaceTaskTimeWithStartTime } from '../helpers/timeConverter';
 
 class AddButton extends Component {
     state = {
         modalVisible: false
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.taskStartTime !== this.props.taskStartTime)
+            replaceTaskTimeWithStartTime(this.props)
     }
 
     triggerModal = () => {
