@@ -1,4 +1,6 @@
 const Images = {
+    MainButton: require('./app_icon/add.png'),
+    CancelButton: require("./app_icon/cancel.png"),
     Onboarding: {
         main: require('./screens/onboarding/Onboarding.png')
     },
@@ -19,6 +21,8 @@ const Images = {
 }
 
 export const cachedImages = [
+    require('./app_icon/add.png'),
+    require("./app_icon/cancel.png"),
     require('./screens/onboarding/Onboarding.png'),
     require('./screens/dashboard/EmptyTodo.png'),
     require('./screens/dashboard/Header.png'),

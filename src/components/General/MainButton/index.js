@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, Platform } from "react-native";
-import Icon from '@expo/vector-icons/FontAwesome';
-import { Entypo } from '@expo/vector-icons';
+import { TouchableOpacity, Platform, Image } from "react-native";
 import Colors from '../../../constants/Colors';
+import Images from '../../../assets/images';
 const SIZE = 80;
 
 const MainButton = (props) => {
     const { triggerModal, modalVisible, setTaskFlag } = props;
     if (modalVisible === false)
         return (
-            <TouchableHighlight style={styles.button} onPress={triggerModal}>
-                <Icon name="plus" size={24} color="white" />
-            </TouchableHighlight>
+            <TouchableOpacity style={styles.button} onPress={triggerModal}>
+                <Image source={Images.MainButton} />
+            </TouchableOpacity>
         )
     else if (modalVisible === true)
         return (
             modalVisible === true &&
-            <TouchableHighlight style={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={() => {
                     setTaskFlag('')
                     triggerModal()
                 }}
             >
-                <Entypo name="cross" size={30} color="white" />
-            </TouchableHighlight>
+                <Image source={Images.CancelButton} />
+            </TouchableOpacity>
         )
 }
 
