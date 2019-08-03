@@ -2,13 +2,12 @@ import React from 'react'
 import { TouchableHighlight, View, Text } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { toggleDatePicker } from '../../../helpers/pickerhelpers';
-import moment from 'moment';
 import Layout from '../../../constants/Layout';
 import Colors from '../../../constants/Colors';
+import { slicingMomentDateUsingAt } from '../../../helpers/timeConverter';
 
 const ReminderDatePicker = (props) => {
     const { taskDate } = props;
-    const date = moment(taskDate).calendar();
     return (
         <View style={[Layout.tableRow, { paddingHorizontal: 10, }]}>
             <View style={[Layout.tableCell, { flex: 1.4 }]}>
@@ -16,9 +15,7 @@ const ReminderDatePicker = (props) => {
             </View>
             <View style={[Layout.tableCell, { flex: 2.25 }]}>
                 <TouchableHighlight underlayColor="transparent" onPress={() => toggleDatePicker(props)}>
-                    <Text style={styles.dateText}>
-                        {date.includes(" at ") ? date.slice(0, date.indexOf(" at ")) : date}
-                    </Text>
+                    <Text style={styles.dateText}>{slicingMomentDateUsingAt(taskDate)}</Text>
                 </TouchableHighlight>
             </View>
             <TouchableHighlight style={[Layout.tableCell, { flex: 0.5 }]}
