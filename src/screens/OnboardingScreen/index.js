@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { View, Image, Text, Dimensions, TouchableOpacity } from 'react-native'
 import { FontAwesome } from "@expo/vector-icons";
 import Images from '../../assets/images';
 import Colors from '../../constants/Colors';
 import Locale from './../../constants/Locale'
 const { width } = Dimensions.get('window');
-export default class OnboardingScreen extends Component {
+export default class OnboardingScreen extends PureComponent {
+
+    shouldComponentUpdate = () => false
 
     render() {
         const { main } = Images.Onboarding;

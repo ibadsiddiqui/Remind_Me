@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, ScrollView, Dimensions } from 'react-native';
 import Header from '../../components/Home/Header';
 import GridView from '../../components/TaskScreen/GridView';
@@ -6,15 +6,7 @@ import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from '../../redux/dispatchers';
 const { height } = Dimensions.get('window')
 
-class TaskScreen extends Component {
-    constructor() {
-        super();
-        this.state = {
-            firstRow: ['Personal', "Work"],
-            secondRow: ["Meeting", "Shopping"],
-            thirdRow: ["Party", "Study"]
-        }
-    }
+class TaskScreen extends PureComponent {
 
     render() {
         return (
@@ -24,7 +16,7 @@ class TaskScreen extends Component {
                     <ScrollView contentContainerStyle={styles.contentContainer}
                         showsVerticalScrollIndicator={false}
                     >
-                        <GridView {...this.state} />
+                        <GridView />
                     </ScrollView>
                 </View>
             </View>
