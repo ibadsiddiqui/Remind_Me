@@ -6,17 +6,16 @@ import styles from './styles';
 
 export default class TaskListGenerator extends React.PureComponent {
 
-    _keyExtractor = (item, index) => index;
+    _keyExtractor = (item, index) => index.toString();
 
     render() {
         const { TaskList, ListOfDaysSelected } = this.props;
         return (
-            <FlatList
-                style={styles.listContainer}
+            <FlatList style={styles.listContainer}
                 keyExtractor={this._keyExtractor}
                 data={[...ListOfDaysSelected]}
                 renderItem={({ item, index }) =>
-                    <View style={styles.dayHeadingContainer} key={index}>
+                    <View style={styles.dayHeadingContainer} key={index.toString()}>
                         <Text style={styles.dayHeadingText}> {item}</Text>
                         {
                             TaskList.map((_item, _index) => {
@@ -25,7 +24,7 @@ export default class TaskListGenerator extends React.PureComponent {
                                 if (conditionOne && conditionTwo)
                                     return null
                                 else return (
-                                    <TaskListItems item={_item} key={_index} />
+                                    <TaskListItems item={_item} key={_index.toString()} />
                                 )
                             })
                         }

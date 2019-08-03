@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View } from "react-native";
 import DisplayModal from '../components/Dashboard/DisplayModal';
 import MainButton from '../components/General/MainButton';
@@ -7,7 +7,7 @@ import { mapStateToProps, mapDispatchToProps } from '../redux/dispatchers';
 import TaskServices from '../services/Task';
 import { replaceTaskTimeWithStartTime } from '../helpers/timeConverter';
 
-class AddButton extends Component {
+class AddButton extends PureComponent {
     state = {
         modalVisible: false
     }

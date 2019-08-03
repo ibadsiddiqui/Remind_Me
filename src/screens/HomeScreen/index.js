@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Dimensions } from 'react-native';
+import { View, Dimensions } from 'react-native';
 import NoTask from '../../components/Home/NoTask';
 import Header from '../../components/Home/Header';
 import { connect } from 'react-redux'
