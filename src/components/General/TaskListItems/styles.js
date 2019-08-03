@@ -7,9 +7,16 @@ const { width } = Dimensions.get('window')
 const styles = {
     container: { flex: 1, marginTop: 16 },
     iconContainer: { ...Layout.tableCell, justifyContent: 'center', flex: 0.1 },
-    headingTxt: { fontSize: 14.5, fontFamily: "rubik-medium", color: Colors.headingColor },
     timeDateContainer: { ...Layout.tableCell, justifyContent: 'center', flex: 0.3 },
     timeDateTxt: { fontSize: 12, color: Colors.inactiveTintColor, fontFamily: "rubik-regular" },
+    headingTxt: (status) => {
+        return {
+            fontSize: 14.5,
+            fontFamily: "rubik-medium",
+            color: status ? Colors.inactiveTintColor : Colors.headingColor,
+            textDecorationLine: status ? 'line-through' : 'none'
+        }
+    },
     styledRow: (flag) => {
         return {
             width: width * 0.9,
@@ -21,9 +28,10 @@ const styles = {
             borderTopColor: Colors.transparent,
             borderBottomColor: Colors.transparent,
             borderRightColor: Colors.transparent,
-            elevation: 1,
+            elevation: 2,
             paddingHorizontal: 10,
             borderRadius: 5,
+            marginBottom: 2.5,
             alignSelf: 'center',
         }
     }
