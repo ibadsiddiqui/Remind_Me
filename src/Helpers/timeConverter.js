@@ -2,7 +2,11 @@ import moment from "moment";
 
 export function hour24Converter(hour, minute) {
     if (hour > 9) {
-        if (hour <= 23 && hour > 21) {
+        if (hour >= 10 && hour < 13) {
+            if (minute > 9) time = (hour % 12).toString() + ":" + minute.toString() + " A.M";
+            else time = (hour % 12).toString() + ":0" + minute.toString() + " A.M";
+        }
+        else if (hour <= 23 && hour > 21) {
             if (minute > 9) time = (hour % 12).toString() + ":" + minute.toString() + " P.M";
             else time = (hour % 12).toString() + ":0" + minute.toString() + " P.M";
         } else {
@@ -42,8 +46,8 @@ function getDateLocalString(date) {
     return new Date(date).toLocaleString()
 }
 
-export function sortArrayAccordingToTime(array){
-    return array.sort((a,b) => new Date(a.taskDate) - new Date(b.taskDate))
+export function sortArrayAccordingToTime(array) {
+    return array.sort((a, b) => new Date(a.taskDate) - new Date(b.taskDate))
 }
 
 export function slicingMomentDateUsingAt(date) {
