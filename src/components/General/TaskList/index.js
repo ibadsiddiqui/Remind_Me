@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Dimensions } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import TaskListItems from '../TaskListItems';
 import { comparingWithOutAt, comparingWithAt } from '../../../helpers/stringHelper';
 import styles from './styles';
-const { width, height } = Dimensions.get('window')
 
 export default class TaskListGenerator extends React.PureComponent {
 

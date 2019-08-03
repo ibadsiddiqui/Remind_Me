@@ -10,7 +10,7 @@ const TaskListReducer = (state = initialState, action) => {
         case CREATE_TASK:
             return {
                 ...state,
-                TaskList: [...state.TaskList, action.payload],
+                TaskList: state.TaskList.concat(action.payload),
             };
         case SET_DAYS: {
             return {

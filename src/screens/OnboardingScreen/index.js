@@ -22,11 +22,8 @@ export default class OnboardingScreen extends Component {
                 <View style={styles.centered}>
                     <Text style={styles.heading}>{title1}</Text>
                     <View style={[styles.rowView, styles.centered]}>
-                        <Text style={styles.heading}>{title2} </Text>
-                        <FontAwesome
-                            name="heart"
-                            size={20}
-                            color="red"
+                        <Text style={styles.heading}>{title2}</Text>
+                        <FontAwesome name="heart" size={20} color="red"
                             style={{ marginTop: 2.5 }}
                         />
                     </View>
@@ -35,8 +32,7 @@ export default class OnboardingScreen extends Component {
                     <Text style={styles.descriptionText}>{Desc}</Text>
                 </View>
                 <View style={styles.btnContainer}>
-                    <TouchableOpacity
-                        style={styles.getStartedBtn}
+                    <TouchableOpacity style={styles.getStartedBtn}
                         onPress={() => navigate("Dashboard")}
                     >
                         <Text style={styles.getStartedText}>{getStartedText}</Text>
