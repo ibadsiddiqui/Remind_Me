@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Tab from './Tab';
+import Categories from '../../../constants/CategoryTabs';
 
-const GridView = (props) => {
-    const { firstRow, secondRow, thirdRow } = props
+const GridView = () => {
+    const { firstRow, secondRow, thirdRow } = Categories
     return (
         <View style={styles.gridContainer}>
             <View style={styles.headingTopContainer}>
@@ -12,13 +13,13 @@ const GridView = (props) => {
                 </View>
             </View>
             <View style={styles.rowContainer}>
-                {firstRow.map((item, key) => <Tab item={item} />)}
+                {firstRow.map((item, key) => <Tab key={key} item={item} />)}
             </View>
             <View style={styles.rowContainer}>
-                {secondRow.map((item, key) => <Tab item={item} />)}
+                {secondRow.map((item, key) => <Tab key={key} item={item} />)}
             </View>
             <View style={styles.rowContainer}>
-                {thirdRow.map((item, key) => <Tab item={item} />)}
+                {thirdRow.map((item, key) => <Tab key={key} item={item} />)}
             </View>
         </View>
     )
