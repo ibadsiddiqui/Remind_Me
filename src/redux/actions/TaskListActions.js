@@ -1,4 +1,4 @@
-import { CREATE_TASK, SET_DAYS } from "../../constants/Types";
+import { CREATE_TASK, SET_DAYS, TOGGLE_TASK_STATUS } from "../../constants/Types";
 
 export const createTask = (task) => {
     return {
@@ -13,3 +13,10 @@ export const AddTaskDays = (day) => {
         payload: day
     }
 } 
+
+export const toggleTaskStatus = (status) => {
+    return {
+        type:TOGGLE_TASK_STATUS,
+        payload: status
+    }
+}

@@ -9,6 +9,7 @@ export const mapStateToProps = (state) => {
         taskDate: state.CreateTask.taskDate,
         taskStartTime: state.CreateTask.taskStartTime,
         taskEndTime: state.CreateTask.taskEndTime,
+        completed: state.CreateTask.completed,
         TaskList: state.TaskList.TaskList,
         ListOfDaysSelected: state.TaskList.ListOfDaysSelected,
     }
@@ -37,8 +38,8 @@ export const mapDispatchToProps = (dispatch) => {
         resetCreateTaskDetails: () => {
             dispatch(resetTaskDetails())
         },
-        toggleTaskStatus: (status) => {
-            dispatch(toggleTaskStatus(status))
+        toggleTaskStatus: (takID) => {
+            dispatch(toggleTaskStatus(takID))
         },
         createTask: (task) => {
             dispatch(createTask(task))
