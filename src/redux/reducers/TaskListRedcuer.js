@@ -1,7 +1,7 @@
-import { CREATE_TASK, SET_DAYS } from '../../constants/Types'
+import { CREATE_TASK, SET_DAYS, TOGGLE_TASK_STATUS } from '../../constants/Types'
 
 const initialState = {
-    TaskList: [],
+    TaskList: new Array(),
     ListOfDaysSelected: new Set([])
 };
 
@@ -18,6 +18,16 @@ const TaskListReducer = (state = initialState, action) => {
                 ListOfDaysSelected: new Set([...state.ListOfDaysSelected, action.payload])
             }
         }
+        case TOGGLE_TASK_STATUS:
+            return {
+                ...state,
+                TaskList: state.TaskList.map((task, index) => {
+                    return task.taskID === action.payload ? {
+                        ...task,
+                        completed: !task.completed
+                    }: task
+                })
+            }
         default:
             return state;
     }
