@@ -10,7 +10,7 @@ const Tab = (props) => {
             <TouchableOpacity style={styles.categoryBtn}>
                 <View style={styles.btnContainer}>
                     <View style={conditionalCircle(item)}>
-                        <Image source={conditionalImages(item)} style={styles.btnIcon} />
+                        <Image source={conditionalImages(item)} />
                     </View>
                     <Text style={styles.btnText}>{item}</Text>
                     <Text style={styles.headingNumberOfTask}>24 Task</Text>
@@ -38,10 +38,6 @@ const styles = {
     },
     btnContainer: {
         alignItems: 'center'
-    },
-    btnIcon: {
-        width: 35,
-        height: 42
     },
     btnText: {
         fontSize: 18,
