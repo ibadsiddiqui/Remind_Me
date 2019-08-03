@@ -34,8 +34,8 @@ const styles = {
     button: {
         alignItems: 'center',
         justifyContent: 'center',
-        width: SIZE - 20,
-        height: SIZE - 20,
+        width: SIZE - 15,
+        height: SIZE - 15,
         borderRadius: SIZE / 2,
         backgroundColor: Colors.taskButton,
         marginBottom: 50,
