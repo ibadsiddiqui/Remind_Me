@@ -1,4 +1,4 @@
-import { CREATE_TASK, SET_DAYS, TOGGLE_TASK_STATUS } from '../../constants/Types'
+import { CREATE_TASK, SET_DAYS, TOGGLE_TASK_STATUS, REMOVE_TASK } from '../../constants/Types'
 
 const initialState = {
     TaskList: new Array(),
@@ -25,8 +25,13 @@ const TaskListReducer = (state = initialState, action) => {
                     return task.taskID === action.payload ? {
                         ...task,
                         completed: !task.completed
-                    }: task
+                    } : task
                 })
+            }
+        case REMOVE_TASK:
+            return {
+                ...state,
+                TaskList: state.TaskList.filter((item) => item.taskID !== action.payload)
             }
         default:
             return state;
