@@ -30,7 +30,7 @@ export function conditionalCircle(category) {
         case "Personal":
             return {
                 ...style,
-                backgroundColor: Colors.personalCircce,
+                backgroundColor: Colors.personalCircle,
             };
         case "Work":
             return {
