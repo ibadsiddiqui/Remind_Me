@@ -5,10 +5,12 @@ import Colors from '../../../../constants/Colors';
 import { countTask } from './taskCountHelper';
 
 const Tab = (props) => {
-    const { item, TaskList } = props
+    const { item, TaskList, navigation } = props
     return (
         <View style={styles.insideRowContainer} key={item}>
-            <TouchableOpacity style={styles.categoryBtn}>
+            <TouchableOpacity style={styles.categoryBtn}
+                onPress={() => navigation.navigate("IndividualTaskCategory", { flag: item })}
+            >
                 <View style={styles.btnContainer}>
                     <View style={conditionalCircle(item)}>
                         <Image source={conditionalImages(item)} />
