@@ -4,13 +4,13 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Colors from '../../../constants/Colors';
 import Layout from '../../../constants/Layout';
 import styles from './styles';
-import AppleStyleSwipeableRow from '../SwipeableRow';
+import SwipeableRow from '../SwipeableRow';
 
 const TaskListItems = (props) => {
     const { item, toggleTaskStatus } = props
     return (
         <View style={styles.container}>
-            <AppleStyleSwipeableRow>
+            <SwipeableRow {...props}>
                 <TouchableOpacity style={[Layout.tableRow, styles.styledRow(item.taskFlag)]}
                     onPress={() => toggleTaskStatus(item.taskID)}
                 >
@@ -29,7 +29,7 @@ const TaskListItems = (props) => {
                         <Text style={styles.headingTxt(item.completed)}>{item.taskDescription}</Text>
                     </View>
                 </TouchableOpacity>
-            </AppleStyleSwipeableRow>
+            </SwipeableRow>
         </View>
     )
 }

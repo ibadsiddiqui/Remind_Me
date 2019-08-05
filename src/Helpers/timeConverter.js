@@ -2,7 +2,7 @@ import moment from "moment";
 
 export function hour24Converter(hour, minute) {
     if (hour > 9) {
-        if (hour >= 10 && hour < 13) {
+        if (hour >= 10 && hour < 12) {
             if (minute > 9) time = (hour % 12).toString() + ":" + minute.toString() + " A.M";
             else time = (hour % 12).toString() + ":0" + minute.toString() + " A.M";
         }

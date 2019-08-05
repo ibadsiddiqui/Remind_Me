@@ -6,7 +6,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import Colors from '../../../constants/Colors';
 
-export default class AppleStyleSwipeableRow extends Component {
+export default class SwipeableRow extends Component {
     // renderLeftActions = (progress, dragX) => {
     //     const trans = dragX.interpolate({
     //         inputRange: [0, 50, 100, 101],
@@ -30,6 +30,7 @@ export default class AppleStyleSwipeableRow extends Component {
         //     this.close();
         //     alert(text);
         // };
+
         return (
             <Animated.View style={{ flex: 1, transform: [{ translateX: trans }] }}>
                 <RectButton onPress={this.close} style={styles.rightAction}>
@@ -57,8 +58,11 @@ export default class AppleStyleSwipeableRow extends Component {
     updateRef = ref => {
         this._swipeableRow = ref;
     };
+
     close = () => {
+        const { deleteTask, item } = this.props;
         this._swipeableRow.close();
+        deleteTask(item.taskID);
     };
 
     render() {
