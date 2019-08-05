@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
 import HomeScreen from '../screens/HomeScreen';
-import TaskScreen from '../screens/TaskScreen'
+import TaskScreen from '../screens/CategoriesScreen'
 import { Feather } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import { View } from 'react-native'

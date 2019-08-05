@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { conditionalCircle, conditionalImages } from '../../../../helpers/styleHelpers';
 import Colors from '../../../../constants/Colors';
+import { countTask } from './taskCountHelper';
 
 const Tab = (props) => {
-    const { item } = props
+    const { item, TaskList } = props
     return (
         <View style={styles.insideRowContainer} key={item}>
             <TouchableOpacity style={styles.categoryBtn}>
@@ -13,7 +14,7 @@ const Tab = (props) => {
                         <Image source={conditionalImages(item)} />
                     </View>
                     <Text style={styles.btnText}>{item}</Text>
-                    <Text style={styles.headingNumberOfTask}>24 Task</Text>
+                    <Text style={styles.headingNumberOfTask}>{countTask(TaskList, item)} Task</Text>
                 </View>
             </TouchableOpacity>
         </View>

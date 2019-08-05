@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import { View, ScrollView, Dimensions } from 'react-native';
 import Header from '../../components/Home/Header';
-import GridView from '../../components/TaskScreen/GridView';
+import GridView from '../../components/Categories/GridView';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from '../../redux/dispatchers';
 const { height } = Dimensions.get('window')
 
-class TaskScreen extends PureComponent {
+class CategoriesScreen extends PureComponent {
 
     render() {
         return (
@@ -16,7 +16,7 @@ class TaskScreen extends PureComponent {
                     <ScrollView contentContainerStyle={styles.contentContainer}
                         showsVerticalScrollIndicator={false}
                     >
-                        <GridView />
+                        <GridView {...this.props} />
                     </ScrollView>
                 </View>
             </View>
@@ -31,4 +31,4 @@ const styles = {
         justifyContent: 'center',
     },
 }
-export default connect(mapStateToProps, mapDispatchToProps)(TaskScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(CategoriesScreen)
