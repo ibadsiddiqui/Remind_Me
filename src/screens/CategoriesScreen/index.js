@@ -11,7 +11,7 @@ class CategoriesScreen extends PureComponent {
     render() {
         return (
             <View style={styles.container}>
-                <Header />
+                <Header {...this.props} />
                 <View style={{ flex: 5 }}>
                     <ScrollView contentContainerStyle={styles.contentContainer}
                         showsVerticalScrollIndicator={false}

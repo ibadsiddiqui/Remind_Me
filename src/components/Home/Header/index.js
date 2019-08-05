@@ -7,16 +7,17 @@ import Locale from '../../../constants/Locale';
 import Layout from '../../../constants/Layout';
 const { width } = Dimensions.get('window');
 
-const Header = () => {
+const Header = (props) => {
     const { header } = Images.Dashboard;
+    const { TaskList } = props
     return (
         <View style={[Layout.tableRow]}>
             <Image source={header} style={{ width, position: 'absolute' }} />
-            <View style={[Layout.tableCell, { paddingHorizontal: 10, marginTop:width * 0.12 }]}>
+            <View style={[Layout.tableCell, { paddingHorizontal: 10, marginTop: width * 0.12 }]}>
                 <Text style={styles.greeting}>Hello Brenda!</Text>
-                <Text style={styles.taskStatus}>{Locale.Tasks.NoTaskNotification}</Text>
+                <Text style={styles.taskStatus}>{Locale.Tasks.TaskNotification(TaskList)}</Text>
             </View>
-            <View style={[Layout.tableCell, { alignItems: 'flex-end', paddingHorizontal:10 , marginTop:width * 0.12}]}>
+            <View style={[Layout.tableCell, styles.userIconContainer]}>
                 <FontAwesome name="user-circle-o" size={40} color="white" />
             </View>
         </View >
@@ -26,6 +27,11 @@ const Header = () => {
 const styles = {
     centered: {
         alignSelf: 'center'
+    },
+    userIconContainer: {
+        alignItems: 'flex-end',
+        paddingHorizontal: 10,
+        marginTop: width * 0.12
     },
     headerContainer: {
         justifyContent: 'center',

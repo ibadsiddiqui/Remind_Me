@@ -13,7 +13,7 @@ class HomeScreen extends Component {
         const { TaskList } = this.props;
         return (
             <View style={styles.container}>
-                <Header />
+                <Header {...this.props} />
                 {
                     TaskList.length !== 0 &&
                     <View style={{ flex: 1, marginTop: height * 0.195 }} />

@@ -8,7 +8,7 @@ const Locale = {
     Tasks: {
         NoTasksDesc: "You have no task to do.",
         NoTasksHeading: "No tasks",
-        NoTaskNotification: "Today you have no tasks!",
+        TaskNotification: (list) => `Today you have ${list.length === 0 ? "no" : list.length} tasks!`,
     },
     ModalTasks: {
         modalHeading: "Add new tasks",
