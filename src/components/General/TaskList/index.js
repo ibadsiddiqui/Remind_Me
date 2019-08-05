@@ -3,7 +3,8 @@ import { View, Text, FlatList } from 'react-native';
 import TaskListItems from '../TaskListItems';
 import { comparingWithOutAt, comparingWithAt } from '../../../helpers/stringHelper';
 import styles from './styles';
-import { sortArrayAccordingToTime, slicingMomentDateUsingAt } from '../../../helpers/timeConverter';
+import { slicingMomentDateUsingAt } from '../../../helpers/timeConverter';
+import { sortArrayAccordingToTime } from '../../../helpers/listHelpers';
 
 export default class TaskListGenerator extends React.PureComponent {
     _keyExtractor = (item, index) => index.toString();
