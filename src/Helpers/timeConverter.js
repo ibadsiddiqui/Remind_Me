@@ -46,10 +46,6 @@ function getDateLocalString(date) {
     return new Date(date).toLocaleString()
 }
 
-export function sortArrayAccordingToTime(array) {
-    return array.sort((a, b) => new Date(a.taskDate) - new Date(b.taskDate))
-}
-
 export function slicingMomentDateUsingAt(date) {
     if (moment(date).calendar().includes(" at ")) {
         return moment(date).calendar().slice(0, moment(date).calendar().indexOf(" at "))
