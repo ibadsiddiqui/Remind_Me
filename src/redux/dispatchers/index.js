@@ -1,5 +1,5 @@
 import { setTaskDescription, setTaskFlag, setTaskDate, setTaskStartTime, setTaskEndTime, setTaskID, resetTaskDetails } from "../actions/CreateTaskActions";
-import { createTask, AddTaskDays, toggleTaskStatus, deleteTask } from "../actions/TaskListActions";
+import { createTask, toggleTaskStatus, deleteTask, addTaskToDate } from "../actions/TaskListActions";
 
 export const mapStateToProps = (state) => {
     return {
@@ -11,7 +11,6 @@ export const mapStateToProps = (state) => {
         taskEndTime: state.CreateTask.taskEndTime,
         completed: state.CreateTask.completed,
         TaskList: state.TaskList.TaskList,
-        ListOfDaysSelected: state.TaskList.ListOfDaysSelected,
     }
 }
 
@@ -44,11 +43,11 @@ export const mapDispatchToProps = (dispatch) => {
         createTask: (task) => {
             dispatch(createTask(task))
         },
+        addTaskToDate: (date, task) => {
+            dispatch(addTaskToDate(date, task))
+        },
         deleteTask: (id) => {
             dispatch(deleteTask(id))
         },
-        addTaskDays: (day) => {
-            dispatch(AddTaskDays(day))
-        }
     }
 };
