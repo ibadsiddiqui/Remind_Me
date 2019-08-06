@@ -1,6 +1,6 @@
-import { SET_TASK_DESCRIPTION, SET_TASK_DATE, SET_TASK_START_TIME, SET_TASK_END_TIME, SET_TASK_FLAG, SET_TASK_ID, RESET_CREATE_TASK_DETAILS } from '../../constants/Types'
-import { TaskCreationObject } from '../../model/CreateTask.model';
+import { RESET_CREATE_TASK_DETAILS, SET_TASK_DATE, SET_TASK_DESCRIPTION, SET_TASK_END_TIME, SET_TASK_FLAG, SET_TASK_ID, SET_TASK_START_TIME } from '../../constants/Types';
 import { getRandomID } from '../../helpers/stringHelper';
+import { TaskCreationObject } from '../../model/CreateTask.model';
 
 const initialState = {
   ...TaskCreationObject

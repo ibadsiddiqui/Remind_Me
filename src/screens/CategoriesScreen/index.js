@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
-import { View, ScrollView, Dimensions } from 'react-native';
-import Header from '../../components/Home/Header';
-import GridView from '../../components/Categories/GridView';
+import { Dimensions, ScrollView, View } from 'react-native';
 import { connect } from 'react-redux';
-import { mapStateToProps, mapDispatchToProps } from '../../redux/dispatchers';
+import GridView from '../../components/Categories/GridView';
+import Header from '../../components/Home/Header';
+import { mapDispatchToProps, mapStateToProps } from '../../redux/dispatchers';
 const { height } = Dimensions.get('window')
 
 class CategoriesScreen extends PureComponent {
@@ -12,7 +12,7 @@ class CategoriesScreen extends PureComponent {
         return (
             <View style={styles.container}>
                 <Header {...this.props} />
-                <View style={{ flex: 5 }}>
+                <View style={{ flex: 4 }}>
                     <ScrollView contentContainerStyle={styles.contentContainer}
                         showsVerticalScrollIndicator={false}
                     >

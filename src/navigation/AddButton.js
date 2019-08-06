@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import { View } from "react-native";
+import { connect } from "react-redux";
 import DisplayModal from '../components/Dashboard/DisplayModal';
 import MainButton from '../components/General/MainButton';
-import { connect } from "react-redux";
-import { mapStateToProps, mapDispatchToProps } from '../redux/dispatchers';
-import TaskServices from '../services/Task';
 import { replaceTaskTimeWithStartTime } from '../helpers/timeConverter';
+import { mapDispatchToProps, mapStateToProps } from '../redux/dispatchers';
+import TaskServices from '../services/Task';
 
 class AddButton extends PureComponent {
     state = {

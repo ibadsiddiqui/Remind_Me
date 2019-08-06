@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import Tab from './Tab';
+import React from 'react';
+import { Text, View } from 'react-native';
 import Categories from '../../../constants/CategoryTabs';
 import { tabMappers } from '../../../helpers/listHelpers';
 
