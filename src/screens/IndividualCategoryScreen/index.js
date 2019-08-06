@@ -17,8 +17,6 @@ class IndividualCategoryScreen extends Component {
 
     render() {
         const { TaskList } = this.props;
-        console.log(this.props.navigation);
-        
         return (
             <View style={styles.container}>
                 <IndividualHeader {...this.props} {...this.state} />

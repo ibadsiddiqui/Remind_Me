@@ -10,6 +10,7 @@ export default class SpecificListGenerator extends React.PureComponent {
 
     render() {
         const { TaskList } = this.props;
+        const flag = this.props.navigation.getParam("flag")
         return (
             <FlatList style={styles.listContainer}
                 keyExtractor={this._keyExtractor}
@@ -19,7 +20,7 @@ export default class SpecificListGenerator extends React.PureComponent {
                         <Text style={styles.dayHeadingText}> {slicingMomentDateUsingAt(item.date)}</Text>
                         {
                             item.data.map((_item, _index) =>
-                                <TaskListItems {...this.props} item={_item} key={_index} />
+                                <TaskListItems {...this.props} item={_item} key={_index} flag={flag} />
                             )
                         }
                     </View>
