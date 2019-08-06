@@ -38,7 +38,7 @@ const styles = {
         height: SIZE - 15,
         borderRadius: SIZE / 2,
         backgroundColor: Colors.taskButton,
-        marginBottom: 50,
+        marginBottom: 35,
         ...Platform.select({
             ios: {
                 shadowColor: Colors.black,
