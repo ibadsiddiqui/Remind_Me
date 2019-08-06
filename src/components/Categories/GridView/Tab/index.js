@@ -6,6 +6,7 @@ import { countTask } from './../../../../helpers/listHelpers';
 
 const Tab = (props) => {
     const { item, TaskList, navigation } = props
+    let count = countTask(TaskList, item);
     return (
         <View style={styles.insideRowContainer} key={item}>
             <TouchableOpacity style={styles.categoryBtn}
@@ -16,7 +17,7 @@ const Tab = (props) => {
                         <Image source={conditionalImages(item)} />
                     </View>
                     <Text style={styles.btnText}>{item}</Text>
-                    <Text style={styles.headingNumberOfTask}>{countTask(TaskList, item)} Task</Text>
+                    <Text style={styles.headingNumberOfTask}>{typeof count === "undefined" ? 0 : count} Task</Text>
                 </View>
             </TouchableOpacity>
         </View>
