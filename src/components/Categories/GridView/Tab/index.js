@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { conditionalCircle, conditionalImages } from '../../../../helpers/styleHelpers';
 import Colors from '../../../../constants/Colors';
-import { countTask } from './taskCountHelper';
+import { countTask } from './../../../../helpers/listHelpers';
 
 const Tab = (props) => {
     const { item, TaskList, navigation } = props

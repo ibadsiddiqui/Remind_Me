@@ -147,26 +147,104 @@ const moment = require('moment');
 
 var array = [
     {
-        "date": "08/06/19",
-        "tasks": [
+        "data": [
             {
-                "taskDate": "Tue Aug  6 23:22:41 2019",
-                "taskDescription": "kajsdkas",
+                "taskDate": "Wed Aug  7 23:55:23 2019",
+                "taskDescription": "jsdasjdkl",
                 "taskEndTime": "",
                 "taskFlag": "Work",
-                "taskID": "e05c3e58-10df-4461-95a4-d99b2aa64cf2",
-                "taskStartTime": "11:22 P.M",
+                "taskID": "bd5695b3-b414-4355-b129-e1814e1956d1",
+                "taskStartTime": "11:55 P.M",
             },
             {
-                "taskDate": "Tue Aug  6 12:55:05 2019",
-                "taskDescription": "ajkndajksnd",
+                "taskDate": "Wed Aug  7 00:00:00 2019",
+                "taskDescription": "asmd,.asmd,.amsd",
                 "taskEndTime": "",
                 "taskFlag": "Meeting",
-                "taskID": "22b2330b-2389-4c3b-8107-e03face35e72",
-                "taskStartTime": "00:55 P.M",
+                "taskID": "c414c7cf-7ced-411b-a9c5-14f069b6f612",
+                "taskStartTime": "00:00 A.M",
+            },
+            {
+                "taskDate": "Wed Aug  7 23:50:29 2019",
+                "taskDescription": "asmdklasmdklas",
+                "taskEndTime": "",
+                "taskFlag": "Work",
+                "taskID": "9c33a36c-e8cf-42d5-92fa-193864cef04d",
+                "taskStartTime": "00:00 A.M",
+            },
+            {
+                "taskDate": "Wed Aug  7 23:50:51 2019",
+                "taskDescription": "asmd;la,sd;l,asd",
+                "taskEndTime": "",
+                "taskFlag": "Personal",
+                "taskID": "2ec99755-74f5-407e-9901-d68f615ba454",
+                "taskStartTime": "00:00 A.M",
+            },
+            {
+                "taskDate": "Wed Aug  7 23:52:04 2019",
+                "taskDescription": "lkasmdklasmd",
+                "taskEndTime": "",
+                "taskFlag": "Work",
+                "taskID": "9073cc5d-127d-420e-bf63-22cbb4df4caa",
+                "taskStartTime": "00:00 A.M",
+            },
+            {
+                "taskDate": "Wed Aug  7 23:52:25 2019",
+                "taskDescription": "a;sld,as,d",
+                "taskEndTime": "",
+                "taskFlag": "Work",
+                "taskID": "649abe0d-820c-4f52-8a2f-007630001ae4",
+                "taskStartTime": "00:00 A.M",
             },
         ],
+        "date": "08/07/19",
+    },
+    {
+        "data": [
+            {
+                "taskDate": "Tue Aug  6 15:49:00 2019",
+                "taskDescription": "asldmald",
+                "taskEndTime": "",
+                "taskFlag": "Work",
+                "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
+                "taskStartTime": "03:49 P.M",
+            },
+            {
+                "taskDate": "Tue Aug  6 00:00:00 2019",
+                "taskDescription": "asmasmdlkasmd",
+                "taskEndTime": "",
+                "taskFlag": "Work",
+                "taskID": "eeffa1ef-eef1-4ddd-ada9-aa368b563ef1",
+                "taskStartTime": "00:00 A.M",
+            },
+        ],
+        "date": "08/06/19",
+    },
+    {
+        "data": [
+            {
+                "taskDate": "Tue Aug  11 15:49:00 2019",
+                "taskDescription": "asldmald",
+                "taskEndTime": "",
+                "taskFlag": "Work",
+                "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
+                "taskStartTime": "03:49 P.M",
+            },
+            {
+                "taskDate": "Tue Aug  11 00:00:00 2019",
+                "taskDescription": "asmasmdlkasmd",
+                "taskEndTime": "",
+                "taskFlag": "Work",
+                "taskID": "eeffa1ef-eef1-4ddd-ada9-aa368b563ef1",
+                "taskStartTime": "00:00 A.M",
+            },
+        ],
+        "date": "08/11/19",
     },
 ]
 
-console.log(typeof array.find((item) => item.date === "08/07/19") === "undefined" ? true : typeof array.find((item) => item.date === "08/06/19"))
+
+console.log(array.sort((a, b) => new Date(b.date) - new Date(a.date)));
+
+
+// console.log(typeof array.find((item) => item.date === "08/07/19") === "undefined" ? true : typeof array.find((item) => item.date === "08/06/19"))
