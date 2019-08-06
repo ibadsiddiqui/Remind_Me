@@ -9,6 +9,6 @@ export const RESET_CREATE_TASK_DETAILS = "RESET_CREATE_TASK_DETAILS";
 
 // for Task and Days List
 export const CREATE_TASK = "CREATE_TASK";
-export const SET_DAYS = "SET_DAYS";
+export const ADD_TASK_TO_DATE = "ADD_TASK_TO_DATE";
 export const TOGGLE_TASK_STATUS = 'TOGGLE_TASK_STATUS';
 export const REMOVE_TASK = "REMOVE_TASK"; 
