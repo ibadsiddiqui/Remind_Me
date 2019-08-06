@@ -1,6 +1,6 @@
 import React from 'react';
 import Tab from "../components/Categories/GridView/Tab";
-
+import _ from 'lodash'
 export function tabMappers(list, props) {
     return list.map((item, key) => <Tab key={key} item={item} {...props} />)
 }
@@ -10,7 +10,7 @@ export function filterListWithFlags(list, flag) {
 }
 
 export function countTask(list, flag) {
-    return (list.map((item) => item.data.filter((item) => item.taskFlag === flag).length)[0]);
+    return _.flattenDeep(list.map((item) => item.data.filter((item) => item.taskFlag === flag))).length;
 }
 
 export function sortArrayAccordingToTime(array) {
