@@ -4,7 +4,7 @@ const { width, height } = Dimensions.get('window')
 
 const styles = {
     listContainer: { height: height * 0.8, width },
-    dayHeadingContainer: { flex: 1, marginTop: 16 },
+    dayHeadingContainer: { flex: 1, marginTop: 10 },
     dayHeadingText: {
         fontSize: 13,
         fontFamily: "rubik-medium",

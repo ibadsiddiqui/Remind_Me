@@ -1,7 +1,6 @@
 import React from 'react';
 import Tab from "../components/Categories/GridView/Tab";
 
-
 export function tabMappers(list, props) {
     return list.map((item, key) => <Tab key={key} item={item} {...props} />)
 }
