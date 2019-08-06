@@ -1,8 +1,8 @@
-import { CREATE_TASK, SET_DAYS, TOGGLE_TASK_STATUS, REMOVE_TASK } from '../../constants/Types'
+import { CREATE_TASK, TOGGLE_TASK_STATUS, REMOVE_TASK, ADD_TASK_TO_DATE } from '../../constants/Types'
+import { sortArrayAccordingToTime } from '../../helpers/listHelpers';
 
 const initialState = {
     TaskList: new Array(),
-    ListOfDaysSelected: new Set([])
 };
 
 const TaskListReducer = (state = initialState, action) => {
@@ -10,14 +10,18 @@ const TaskListReducer = (state = initialState, action) => {
         case CREATE_TASK:
             return {
                 ...state,
-                TaskList: state.TaskList.concat(action.payload),
+                TaskList: sortArrayAccordingToTime(state.TaskList.concat(action.payload)),
             };
-        case SET_DAYS: {
+        case ADD_TASK_TO_DATE:
             return {
                 ...state,
-                ListOfDaysSelected: new Set([...state.ListOfDaysSelected, action.payload])
+                TaskList: state.TaskList.map((item, index) => {
+                    return item.date === action.date ? {
+                        date: item.date,
+                        data: sortArrayAccordingToTime(item.data.concat(action.payload))
+                    } : item
+                })
             }
-        }
         case TOGGLE_TASK_STATUS:
             return {
                 ...state,
