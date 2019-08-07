@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon } from 'expo';
+import { AppLoading, Asset, Font } from 'expo';
 import AppNavigator from './src/navigation/AppNavigator';
 import configureStore from "./src/redux/store";
 import { Provider } from "react-redux";
@@ -44,17 +44,12 @@ export default class App extends React.Component {
 
   _loadResourcesAsync = async () => {
 
-    await Asset.loadAsync(cachedImages),
-      await Font.loadAsync({
-        // This is the font that we are using for our tab bar
-        ...Icon.Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
-        // 'space-mono': require('./src/assets/fonts/SpaceMono-Regular.ttf'),
-        "rubik-medium": require('./src/assets/fonts/Rubik-Medium.ttf'),
-        "rubik-regular": require('./src/assets/fonts/Rubik-Regular.ttf'),
-        "opensans-regular": require('./src/assets/fonts/OpenSans-Regular.ttf'),
-      });
+    await Asset.loadAsync(cachedImages);
+    await Font.loadAsync({
+      "rubik-medium": require('./src/assets/fonts/Rubik-Medium.ttf'),
+      "rubik-regular": require('./src/assets/fonts/Rubik-Regular.ttf'),
+      "opensans-regular": require('./src/assets/fonts/OpenSans-Regular.ttf'),
+    });
   }
 
   _handleLoadingError = error => {
