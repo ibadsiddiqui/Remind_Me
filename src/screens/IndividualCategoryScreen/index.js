@@ -4,7 +4,7 @@ import NoTask from '../../components/Home/NoTask';
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from '../../redux/dispatchers';
 import IndividualHeader from '../../components/IndividualCategory/Header';
-import SpecificListGenerator from '../../components/IndividualCategory/specificListGenerator';
+import TaskListGenerator from '../../components/General/TaskList';
 const { height } = Dimensions.get('window')
 
 class IndividualCategoryScreen extends Component {
@@ -27,7 +27,10 @@ class IndividualCategoryScreen extends Component {
                 {
                     TaskList.length === 0 ?
                         <NoTask /> :
-                        <SpecificListGenerator {...this.props} {...this.state} />
+                        <TaskListGenerator {...this.props} individualCategory={true}
+                            category={this.state.flagType}
+                        />
+
                 }
             </View>
         )
