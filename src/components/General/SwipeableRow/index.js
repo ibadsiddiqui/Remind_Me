@@ -61,8 +61,10 @@ export default class SwipeableRow extends Component {
 
     close = () => {
         const { deleteTask, item } = this.props;
+        const { taskID, taskDate } = item;
+        const sectionTitleForTaskList = new Date(taskDate).toLocaleDateString();
         this._swipeableRow.close();
-        deleteTask(item.taskID);
+        deleteTask(sectionTitleForTaskList, taskID);
     };
 
     render() {
