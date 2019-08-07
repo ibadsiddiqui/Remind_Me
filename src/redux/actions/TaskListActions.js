@@ -15,10 +15,13 @@ export const addTaskToDate = (date, task) => {
     }
 }
 
-export const toggleTaskStatus = (status) => {
+export const toggleTaskStatus = (taskDate, taskID) => {
     return {
         type: TOGGLE_TASK_STATUS,
-        payload: status
+        payload: {
+            taskDate,
+            taskID
+        }
     }
 }
 

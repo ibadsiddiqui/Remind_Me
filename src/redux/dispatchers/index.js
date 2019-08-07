@@ -37,8 +37,8 @@ export const mapDispatchToProps = (dispatch) => {
         resetCreateTaskDetails: () => {
             dispatch(resetTaskDetails())
         },
-        toggleTaskStatus: (takID) => {
-            dispatch(toggleTaskStatus(takID))
+        toggleTaskStatus: (taskDate, taskID) => {
+            dispatch(toggleTaskStatus(taskDate, taskID))
         },
         createTask: (task) => {
             dispatch(createTask(task))
