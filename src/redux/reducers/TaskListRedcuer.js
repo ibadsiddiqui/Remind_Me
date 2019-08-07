@@ -1,5 +1,5 @@
 import { CREATE_TASK, TOGGLE_TASK_STATUS, REMOVE_TASK, ADD_TASK_TO_DATE } from '../../constants/Types'
-import { sortArrayAccordingToTime } from '../../helpers/listHelpers';
+import { sortArrayAccordingToTime, sortArrayAccordingToDate } from '../../helpers/listHelpers';
 
 const initialState = {
     TaskList: new Array(),
@@ -10,7 +10,7 @@ const TaskListReducer = (state = initialState, action) => {
         case CREATE_TASK:
             return {
                 ...state,
-                TaskList: sortArrayAccordingToTime(state.TaskList.concat(action.payload)),
+                TaskList: sortArrayAccordingToDate(state.TaskList.concat(action.payload)),
             };
         case ADD_TASK_TO_DATE:
             return {

@@ -17,6 +17,10 @@ export function sortArrayAccordingToTime(array) {
     return array.sort((a, b) => new Date(a.taskDate) - new Date(b.taskDate))
 }
 
+export function sortArrayAccordingToDate(array) {
+    return array.sort((a, b) => new Date(a.date) - new Date(b.date))
+}
+
 export function filterTodaysTask(array) {
     return array.filter(x => new Date(x.date).toLocaleDateString() === new Date().toLocaleDateString())
 }
