@@ -46,8 +46,8 @@ export const mapDispatchToProps = (dispatch) => {
         addTaskToDate: (date, task) => {
             dispatch(addTaskToDate(date, task))
         },
-        deleteTask: (id) => {
-            dispatch(deleteTask(id))
+        deleteTask: (taskDate, taskID) => {
+            dispatch(deleteTask(taskDate, taskID))
         },
     }
 };

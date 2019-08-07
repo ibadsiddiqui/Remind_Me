@@ -25,9 +25,12 @@ export const toggleTaskStatus = (taskDate, taskID) => {
     }
 }
 
-export const deleteTask = (id) => {
+export const deleteTask = (taskDate, taskID) => {
     return {
         type: REMOVE_TASK,
-        payload: id
+        payload: {
+            taskDate,
+            taskID
+        }
     }
 }
