@@ -26,9 +26,12 @@ const TaskListReducer = (state = initialState, action) => {
             return {
                 ...state,
                 TaskList: state.TaskList.map((task, index) => {
-                    return task.taskID === action.payload ? {
-                        ...task,
-                        completed: !task.completed
+                    return task.date === action.payload.taskDate ? {
+                        date: task.date,
+                        data: task.data.map((item, _index) => item.taskID === action.payload.taskID ? {
+                            ...item,
+                            completed: !item.completed
+                        } : item),
                     } : task
                 })
             }
