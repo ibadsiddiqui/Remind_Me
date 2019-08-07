@@ -15,7 +15,8 @@ const TaskListGenerator = (props) => {
             sections={TaskList}
             keyExtractor={(item, index) => index}
             renderSectionHeader={({ section }) =>
-                <View style={styles.dayHeadingContainer}>
+                section.date !== "" &&
+                < View style={styles.dayHeadingContainer}>
                     <Text style={styles.dayHeadingText}> {slicingMomentDateUsingAt(section.date)}:</Text>
                 </View >
             }
@@ -35,6 +36,7 @@ const TaskListGenerator = (props) => {
             sections={TaskList}
             keyExtractor={(item, index) => index}
             renderSectionHeader={({ section }) =>
+                section.date !== "" &&
                 <View style={styles.dayHeadingContainer}>
                     <Text style={styles.dayHeadingText}> {slicingMomentDateUsingAt(section.date)}</Text>
                 </View >

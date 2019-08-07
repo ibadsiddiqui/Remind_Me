@@ -24,3 +24,15 @@ export function sortArrayAccordingToDate(array) {
 export function filterTodaysTask(array) {
     return array.filter(x => new Date(x.date).toLocaleDateString() === new Date().toLocaleDateString())
 }
+
+export function mapFilteredListUsingTaskID(list, action) {
+    return list.map((task, index) => {
+        return task.date === action.payload.taskDate ?
+            task.data.length === 1 ? { data: [], date: "" } :
+                {
+                    date: task.date,
+                    data: task.data.filter((item, _index) => item.taskID !== action.payload.taskID),
+                }
+            : task
+    })
+}
