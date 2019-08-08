@@ -21,13 +21,17 @@ export function filterTodaysTask(array) {
     return array.filter(x => getLocaleDateString(x.date) === getLocaleDateString());
 }
 
+function filterUsingTasKID(list, action) {
+    return list.filter(item => item.taskID !== action.payload.taskID)
+}
+
 export function mapFilteredListUsingTaskID(list, action) {
-    return list.map((task, index) => {
+    return list.map((task, _) => {
         return task.date === action.payload.taskDate ?
             task.data.length === 1 ? null :
                 {
                     date: task.date,
-                    data: task.data.filter(item => item.taskID !== action.payload.taskID),
+                    data: filterUsingTasKID(task.data, action),
                 }
             : task
     }).filter((item) => !_.isEmpty(item));
