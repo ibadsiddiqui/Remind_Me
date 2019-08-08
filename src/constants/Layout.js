@@ -9,6 +9,11 @@ const Layout = {
     height,
   },
   isSmallDevice: width < 375,
+  profileImage: {
+    width: 45,
+    height: 45,
+    borderRadius: 25
+  },
   table: {
     flex: 1,
     alignItems: 'center',
