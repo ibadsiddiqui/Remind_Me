@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { View, Text, Dimensions, Image } from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
+import React from 'react';
+import { Dimensions, Image, Text, View } from 'react-native';
 import Images from '../../../assets/images';
 import Colors from '../../../constants/Colors';
-import Locale from '../../../constants/Locale';
 import Layout from '../../../constants/Layout';
+import Locale from '../../../constants/Locale';
 import { filterTodaysTask } from '../../../helpers/listHelpers';
 const { width } = Dimensions.get('window');
 
