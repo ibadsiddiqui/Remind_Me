@@ -1,5 +1,5 @@
 import moment from "moment";
-import { slicingMomentDateUsingAt } from "./timeConverter";
+import { getLocaleDateString, slicingMomentDateUsingAt } from "./timeConverter";
 const uuid4 = require('uuid/v4');
 
 export function checkDateAndSlice(year, month, day) {
@@ -25,14 +25,14 @@ export function checkDateAndSlice(year, month, day) {
 }
 
 export function comparingWithAt(item1, item2) {
-    let leftSide = slicingMomentDateUsingAt(new Date(item1).toLocaleDateString())
-    let rightSide = slicingMomentDateUsingAt(new Date(item2.taskDate).toLocaleDateString())
+    let leftSide = slicingMomentDateUsingAt(getLocaleDateString(item1))
+    let rightSide = slicingMomentDateUsingAt(getLocaleDateString(item2.taskDate))
     return leftSide !== rightSide;
 }
 
 export function comparingWithOutAt(item1, item2) {
-    let leftSide = slicingMomentDateUsingAt(new Date(item1).toLocaleDateString())
-    let rightSide = slicingMomentDateUsingAt(new Date(item2.taskDate).toLocaleDateString())
+    let leftSide = slicingMomentDateUsingAt(getLocaleDateString(item1))
+    let rightSide = slicingMomentDateUsingAt(getLocaleDateString(item2.taskDate))
     return leftSide !== rightSide
 }
 

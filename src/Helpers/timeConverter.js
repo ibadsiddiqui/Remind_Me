@@ -20,13 +20,13 @@ export function hour24Converter(hour, minute) {
     return time; // return adjusted time or original string
 }
 
-export async function replaceTaskTimeWithStartTime(props) {
+export function replaceTaskTimeWithStartTime(props) {
     const { setTaskDate, taskDate, taskStartTime } = props;
     let starttimeHours = taskStartTime.slice(0, 2)
-    let starttimeMinutes = await getSlicedMinutesFromFalse24Hours(taskStartTime);
+    let starttimeMinutes = getSlicedMinutesFromFalse24Hours(taskStartTime);
     let newDate;
-    if (taskStartTime.includes("A.M.")) newDate = await getDateLocalString(setMinutesForDate(setHoursForDate(taskDate, starttimeHours), starttimeMinutes));
-    else newDate = await getDateLocalString(setMinutesForDate(setHoursForDate(taskDate, starttimeHours, 12), starttimeMinutes));
+    if (taskStartTime.includes("A.M.")) newDate = getLocaleString(setMinutesForDate(setHoursForDate(taskDate, starttimeHours), starttimeMinutes));
+    else newDate = getLocaleString(setMinutesForDate(setHoursForDate(taskDate, starttimeHours, 12), starttimeMinutes));
     setTaskDate(newDate);
 }
 
@@ -42,8 +42,14 @@ function getSlicedMinutesFromFalse24Hours(time) {
     return parseInt(time.slice(time.indexOf(":") + 1, time.indexOf(":") + 3))
 }
 
-function getDateLocalString(date) {
+function getLocaleString(date) {
     return new Date(date).toLocaleString()
+}
+
+export function getLocaleDateString(date) {
+    if (typeof date !== "undefined")
+        return new Date(date).toLocaleDateString()
+    return new Date(date).toLocaleDateString()
 }
 
 export function slicingMomentDateUsingAt(date) {
