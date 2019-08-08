@@ -1,5 +1,5 @@
 const moment = require('moment');
-// const _ = require('lodash')
+const _ = require('lodash')
 // var array = [
 //     {
 //         "taskDate": "Today at 01:01 PM",
@@ -146,69 +146,69 @@ const moment = require('moment');
 
 
 var array = [
+    // {
+    //     "data": [
+    //         {
+    //             "taskDate": "Wed Aug  7 23:55:23 2019",
+    //             "taskDescription": "jsdasjdkl",
+    //             "taskEndTime": "",
+    //             "taskFlag": "Work",
+    //             "taskID": "bd5695b3-b414-4355-b129-e1814e1956d1",
+    //             "taskStartTime": "11:55 P.M",
+    //         },
+    //         {
+    //             "taskDate": "Wed Aug  7 00:00:00 2019",
+    //             "taskDescription": "asmd,.asmd,.amsd",
+    //             "taskEndTime": "",
+    //             "taskFlag": "Meeting",
+    //             "taskID": "c414c7cf-7ced-411b-a9c5-14f069b6f612",
+    //             "taskStartTime": "00:00 A.M",
+    //         },
+    //         {
+    //             "taskDate": "Wed Aug  7 23:50:29 2019",
+    //             "taskDescription": "asmdklasmdklas",
+    //             "taskEndTime": "",
+    //             "taskFlag": "Work",
+    //             "taskID": "9c33a36c-e8cf-42d5-92fa-193864cef04d",
+    //             "taskStartTime": "00:00 A.M",
+    //         },
+    //         {
+    //             "taskDate": "Wed Aug  7 23:50:51 2019",
+    //             "taskDescription": "asmd;la,sd;l,asd",
+    //             "taskEndTime": "",
+    //             "taskFlag": "Personal",
+    //             "taskID": "2ec99755-74f5-407e-9901-d68f615ba454",
+    //             "taskStartTime": "00:00 A.M",
+    //         },
+    //         {
+    //             "taskDate": "Wed Aug  7 23:52:04 2019",
+    //             "taskDescription": "lkasmdklasmd",
+    //             "taskEndTime": "",
+    //             "taskFlag": "Work",
+    //             "taskID": "9073cc5d-127d-420e-bf63-22cbb4df4caa",
+    //             "taskStartTime": "00:00 A.M",
+    //         },
+    //         {
+    //             "taskDate": "Wed Aug  7 23:52:25 2019",
+    //             "taskDescription": "a;sld,as,d",
+    //             "taskEndTime": "",
+    //             "taskFlag": "Work",
+    //             "taskID": "649abe0d-820c-4f52-8a2f-007630001ae4",
+    //             "taskStartTime": "00:00 A.M",
+    //         },
+    //     ],
+    //     "date": "08/07/19",
+    // },
     {
         "data": [
-            {
-                "taskDate": "Wed Aug  7 23:55:23 2019",
-                "taskDescription": "jsdasjdkl",
-                "taskEndTime": "",
-                "taskFlag": "Work",
-                "taskID": "bd5695b3-b414-4355-b129-e1814e1956d1",
-                "taskStartTime": "11:55 P.M",
-            },
-            {
-                "taskDate": "Wed Aug  7 00:00:00 2019",
-                "taskDescription": "asmd,.asmd,.amsd",
-                "taskEndTime": "",
-                "taskFlag": "Meeting",
-                "taskID": "c414c7cf-7ced-411b-a9c5-14f069b6f612",
-                "taskStartTime": "00:00 A.M",
-            },
-            {
-                "taskDate": "Wed Aug  7 23:50:29 2019",
-                "taskDescription": "asmdklasmdklas",
-                "taskEndTime": "",
-                "taskFlag": "Work",
-                "taskID": "9c33a36c-e8cf-42d5-92fa-193864cef04d",
-                "taskStartTime": "00:00 A.M",
-            },
-            {
-                "taskDate": "Wed Aug  7 23:50:51 2019",
-                "taskDescription": "asmd;la,sd;l,asd",
-                "taskEndTime": "",
-                "taskFlag": "Personal",
-                "taskID": "2ec99755-74f5-407e-9901-d68f615ba454",
-                "taskStartTime": "00:00 A.M",
-            },
-            {
-                "taskDate": "Wed Aug  7 23:52:04 2019",
-                "taskDescription": "lkasmdklasmd",
-                "taskEndTime": "",
-                "taskFlag": "Work",
-                "taskID": "9073cc5d-127d-420e-bf63-22cbb4df4caa",
-                "taskStartTime": "00:00 A.M",
-            },
-            {
-                "taskDate": "Wed Aug  7 23:52:25 2019",
-                "taskDescription": "a;sld,as,d",
-                "taskEndTime": "",
-                "taskFlag": "Work",
-                "taskID": "649abe0d-820c-4f52-8a2f-007630001ae4",
-                "taskStartTime": "00:00 A.M",
-            },
-        ],
-        "date": "08/07/19",
-    },
-    {
-        "data": [
-            {
-                "taskDate": "Tue Aug  6 15:49:00 2019",
-                "taskDescription": "asldmald",
-                "taskEndTime": "",
-                "taskFlag": "Work",
-                "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
-                "taskStartTime": "03:49 P.M",
-            },
+            // {
+            //     "taskDate": "Tue Aug  6 15:49:00 2019",
+            //     "taskDescription": "asldmald",
+            //     "taskEndTime": "",
+            //     "taskFlag": "Work",
+            //     "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
+            //     "taskStartTime": "03:49 P.M",
+            // },
             {
                 "taskDate": "Tue Aug  6 00:00:00 2019",
                 "taskDescription": "asmasmdlkasmd",
@@ -218,18 +218,18 @@ var array = [
                 "taskStartTime": "00:00 A.M",
             },
         ],
-        "date": "08/06/19",
+        "date": "08/08/19",
     },
     {
         "data": [
-            {
-                "taskDate": "Tue Aug  11 15:49:00 2019",
-                "taskDescription": "asldmald",
-                "taskEndTime": "",
-                "taskFlag": "Work",
-                "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
-                "taskStartTime": "03:49 P.M",
-            },
+            // {
+            //     "taskDate": "Tue Aug  11 15:49:00 2019",
+            //     "taskDescription": "asldmald",
+            //     "taskEndTime": "",
+            //     "taskFlag": "Work",
+            //     "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
+            //     "taskStartTime": "03:49 P.M",
+            // },
             {
                 "taskDate": "Tue Aug  11 00:00:00 2019",
                 "taskDescription": "asmasmdlkasmd",
@@ -239,12 +239,20 @@ var array = [
                 "taskStartTime": "00:00 A.M",
             },
         ],
-        "date": "08/11/19",
+        "date": "08/09/19",
     },
 ]
 
 
-console.log(array.sort((a, b) => new Date(b.date) - new Date(a.date)));
+console.log(array.map((task, index) => {
+    return task.date === "08/09/19" ?
+        task.data.length !== 1 ? null :
+            {
+                date: task.date,
+                data: task.data.filter((item, _index) => item.taskID !== "eeffa1ef-eef1-4ddd-ada9-aa368b563ef1"),
+            }
+        : task
+}).filter((item) => !_.isEmpty(item)))
 
-
+// console.log(_.isEmpty([]))
 // console.log(typeof array.find((item) => item.date === "08/07/19") === "undefined" ? true : typeof array.find((item) => item.date === "08/06/19"))
