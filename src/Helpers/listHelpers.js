@@ -1,8 +1,10 @@
+import _ from 'lodash';
 import React from 'react';
 import Tab from "../components/Categories/GridView/Tab";
-import _ from 'lodash'
+import { getLocaleDateString } from './timeConverter';
+
 export function tabMappers(list, props) {
-    return list.map((item, key) => <Tab key={key} item={item} {...props} />)
+    return list.map((item, key) => <Tab key={key} item={item} {...props} />);
 }
 
 export function filterListWithFlags(list, flag) {
@@ -14,25 +16,25 @@ export function countTask(list, flag) {
 }
 
 export function sortArrayAccordingToTime(array) {
-    return array.sort((a, b) => new Date(a.taskDate) - new Date(b.taskDate))
+    return array.sort((a, b) => new Date(a.taskDate) - new Date(b.taskDate));
 }
 
 export function sortArrayAccordingToDate(array) {
-    return array.sort((a, b) => new Date(a.date) - new Date(b.date))
+    return array.sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
 export function filterTodaysTask(array) {
-    return array.filter(x => new Date(x.date).toLocaleDateString() === new Date().toLocaleDateString())
+    return array.filter(x => getLocaleDateString(x.date) === getLocaleDateString());
 }
 
 export function mapFilteredListUsingTaskID(list, action) {
     return list.map((task, index) => {
         return task.date === action.payload.taskDate ?
-            task.data.length === 1 ? { data: [], date: "" } :
+            task.data.length === 1 ? null :
                 {
                     date: task.date,
-                    data: task.data.filter((item, _index) => item.taskID !== action.payload.taskID),
+                    data: task.data.filter(item => item.taskID !== action.payload.taskID),
                 }
             : task
-    })
+    }).filter((item) => !_.isEmpty(item));
 }
