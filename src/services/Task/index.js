@@ -1,14 +1,16 @@
+import { getLocaleDateString } from "../../helpers/timeConverter";
+
 export default class TaskServices {
     constructor() { }
 
     static async CreateTask(props) {
         const { TaskList, taskDescription, taskFlag, triggerModal } = props;
         if (taskDescription && taskFlag) {
-            const { addTaskToDate,  createTask, taskID, taskDescription, taskFlag, taskDate, taskStartTime, taskEndTime } = props;
-            let isNewDate = typeof TaskList.find((item) => item.date === new Date(taskDate).toLocaleDateString()) === "undefined" ? true : false
+            const { addTaskToDate, createTask, taskID, taskDescription, taskFlag, taskDate, taskStartTime, taskEndTime } = props;
+            let isNewDate = typeof TaskList.find((item) => item.date === getLocaleDateString(taskDate)) === "undefined" ? true : false
             if (TaskList.length === 0 || isNewDate) {
                 await createTask({
-                    date: new Date(taskDate).toLocaleDateString(),
+                    date: getLocaleDateString(taskDate),
                     data: [{
                         taskID,
                         taskDescription,
@@ -19,7 +21,7 @@ export default class TaskServices {
                     }]
                 });
             } else {
-                addTaskToDate(new Date(taskDate).toLocaleDateString(), {
+                addTaskToDate(getLocaleDateString(taskDate), {
                     taskID,
                     taskDescription,
                     taskFlag,
