@@ -1,20 +1,27 @@
-import { createStore, combineReducers } from "redux";
-import { persistStore, persistReducer } from "redux-persist";
-
-// import storage from "redux-persist/lib/storage"; 
-
-import CreateTaskReducer from './../reducers/CreateTaskReducer'
+import { combineReducers, createStore } from 'redux';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import TaskListReducer from "../reducers/TaskListRedcuer";
-import { persistConfigForTaskList } from "../../constants/persistConfig";
+import UserReducer from '../reducers/UserReducer';
+import CreateTaskReducer from './../reducers/CreateTaskReducer';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
 
 const rootReducer = combineReducers({
-  CreateTask: persistReducer(persistConfigForTaskList, CreateTaskReducer),
+  CreateTask: CreateTaskReducer,
   TaskList: TaskListReducer,
+  User: UserReducer,
 });
 
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 const configureStore = () => {
-  let store = createStore(rootReducer);
-  return { store };
-};
+  let store = createStore(persistedReducer)
+  let persistor = persistStore(store)
+  return { store, persistor }
+}
 
 export default configureStore;
