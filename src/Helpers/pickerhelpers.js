@@ -1,6 +1,8 @@
-import { DatePickerAndroid, TimePickerAndroid } from 'react-native'
-import { hour24Converter } from './timeConverter';
+import { ImagePicker } from 'expo';
+import { DatePickerAndroid, TimePickerAndroid } from 'react-native';
+import { getPermissionForCameraAsync, getPermissionForCameraRollAsync } from './permissionsHelper';
 import { checkDateAndSlice } from './stringHelper';
+import { hour24Converter } from './timeConverter';
 
 export async function toggleDatePicker(props) {
     const { setTaskDate } = props;
@@ -53,5 +55,20 @@ export async function toggleTimePicker(type, props) {
             break;
         default:
             break;
+    }
+}
+
+export async function profileImagePicker(props) {
+    const cameraRollPermission = getPermissionForCameraRollAsync();
+    const cameraPermission = getPermissionForCameraAsync();
+    const { setUserProfileImage } = props;
+    if (cameraPermission && cameraRollPermission) {
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            base64: true,
+            aspect: [4, 3],
+        });
+        setUserProfileImage(result.uri)
     }
 }
