@@ -1,11 +1,5 @@
 import _ from 'lodash';
-import React from 'react';
-import Tab from "../components/Categories/GridView/Tab";
 import { getLocaleDateString } from './timeConverter';
-
-export function tabMappers(list, props) {
-    return list.map((item, key) => <Tab key={key} item={item} {...props} />);
-}
 
 export function filterListWithFlags(list, flag) {
     return list.filter((item) => item.taskFlag === flag);
