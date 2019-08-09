@@ -1,6 +1,6 @@
 import { FontAwesome } from "@expo/vector-icons";
 import React from 'react';
-import { Dimensions, Image, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, Text, TouchableOpacity, View, TextInput } from 'react-native';
 import Images from '../../../assets/images';
 import Colors from '../../../constants/Colors';
 import Layout from '../../../constants/Layout';
@@ -18,7 +18,10 @@ const Header = (props) => {
         <View style={[Layout.tableRow]}>
             <Image source={header} style={{ width, position: 'absolute' }} />
             <View style={[Layout.tableCell, { paddingHorizontal: 10, marginTop: width * 0.12 }]}>
-                <Text style={styles.greeting}>Hello Brenda!</Text>
+                <View style={{ flexDirection: 'row', width: 100, height: 22 }}>
+                    <Text style={styles.greeting}>Hello!</Text>
+                    {/* <TextInput style={styles.greeting} placeholder="User" placeholderTextColor="white" /> */}
+                </View>
                 <Text style={styles.taskStatus}>{Locale.Tasks.TaskNotification(listofTasks)}</Text>
             </View>
             <View style={[Layout.tableCell, { alignItems: 'flex-end' }]}>

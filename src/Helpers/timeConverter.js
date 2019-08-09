@@ -29,6 +29,14 @@ export function replaceTaskTimeWithStartTime(props) {
     setTaskDate(newDate);
 }
 
+export function getHours(date) {
+    return new Date(date).getHours()
+}
+
+export function getMinute(date) {
+    return new Date(date).getMinutes();
+}
+
 function setHoursForDate(date, hours, Hours24 = 0) {
     return new Date(date).setHours(parseInt(hours) + Hours24);
 }
