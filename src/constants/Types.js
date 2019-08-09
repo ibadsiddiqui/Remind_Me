@@ -1,4 +1,5 @@
 // user action types
+export const SET_USERNAME = "SET_USERNAME";
 export const SET_PROFILE_IMAGE = "SET_PROFILE_IMAGE";
 
 // fill Details flag
