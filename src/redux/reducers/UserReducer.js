@@ -1,16 +1,19 @@
-import { SET_PROFILE_IMAGE } from '../../constants/Types';
+import { SET_PROFILE_IMAGE, SET_USERNAME } from '../../constants/Types';
 import User from './../../model/User.model';
 
-
-const initialState = User;
-
-const UserReducer = (state = initialState, action) => {
+const UserReducer = (state = User, action) => {
     switch (action.type) {
         case SET_PROFILE_IMAGE:
             return {
                 ...state,
                 profileImage: action.payload,
             };
+
+        case SET_USERNAME:
+            return {
+                ...state,
+                username: action.payload,
+            }
         default:
             return state;
     }
