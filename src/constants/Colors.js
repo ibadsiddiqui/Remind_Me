@@ -14,7 +14,7 @@ const Colors = {
     personalFlag: "#F9C229",
     workFlag: "#1ED102",
     meetingFlag: '#D10263',
-    studyFlag: "#BF0080",
+    studyFlag: "#3044F2",
     shoppingFlag: "#EC6C0B",
     partyFlag: "#09ACCE",
     categoryButtonsText: "#686868",
@@ -23,7 +23,7 @@ const Colors = {
     personalCircle: "rgba(255,238,155,0.36)",
     workCirlce: "rgba(181,255,155,0.36)",
     meetingCirlce: "rgba(255,155,205,0.36)",
-    studyCirlce: "rgba(245,155,255,0.36)",
+    studyCirlce: "#3044F2",
     shoppingCirlce: "rgba(255,208,155,0.36)",
     partyCirlce: "rgba(155,255,248,0.36)",
     ////////////////////////////////
