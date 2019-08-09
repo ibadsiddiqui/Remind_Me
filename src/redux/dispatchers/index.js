@@ -1,6 +1,6 @@
 import { resetTaskDetails, setTaskDate, setTaskDescription, setTaskEndTime, setTaskFlag, setTaskID, setTaskStartTime } from "../actions/CreateTaskActions";
 import { addTaskToDate, createTask, deleteTask, toggleTaskStatus } from "../actions/TaskListActions";
-import { setProfileImage } from "../actions/UserActions";
+import { setProfileImage, setUsername } from "../actions/UserActions";
 
 export const mapStateToProps = (state) => {
     return {
@@ -56,5 +56,8 @@ export const mapDispatchToProps = (dispatch) => {
         setUserProfileImage: (img) => {
             dispatch(setProfileImage(img))
         },
+        setUsername: (name) => {
+            dispatch(setUsername(name))
+        }
     }
 };
