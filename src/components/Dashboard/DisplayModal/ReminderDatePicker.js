@@ -13,8 +13,10 @@ const ReminderDatePicker = (props) => {
             <View style={[Layout.tableCell, { flex: 1.4 }]}>
                 <Text style={styles.heading}>Choose date: </Text>
             </View>
-            <View style={[Layout.tableCell, { flex: 2.25 }]}>
-                <TouchableHighlight underlayColor="transparent" onPress={() => toggleDatePicker(props)}>
+            <View style={[Layout.tableCell, { flex: 2.25, paddingLeft: 40 }]}>
+                <TouchableHighlight underlayColor="transparent" onPress={() => toggleDatePicker(props)}
+                    style={{ width: 140, height: 25 }}
+                >
                     <Text style={styles.dateText}>{slicingMomentDateUsingAt(taskDate)}</Text>
                 </TouchableHighlight>
             </View>
@@ -22,7 +24,7 @@ const ReminderDatePicker = (props) => {
                 onPress={() => toggleDatePicker(props)}
                 underlayColor="transparent"
             >
-                <View style={{ width: 50, marginLeft: 15 }}>
+                <View style={{ width: 50}}>
                     <Entypo name="chevron-down" size={20} color={Colors.black}
                         style={styles.icon} />
                 </View>
@@ -38,7 +40,6 @@ const styles = {
         flexDirection: 'row',
     },
     heading: {
-        textAlign: 'left',
         width: 100,
         fontFamily: "rubik-regular",
         fontSize: 13,
@@ -57,13 +58,11 @@ const styles = {
         fontSize: 13
     },
     dateText: {
-        fontFamily: "rubik-medium",
+        fontFamily: "rubik-regular",
         fontSize: 13,
         width: Layout.window.width * 0.3,
         textAlign: 'left',
         marginTop: 2,
-        marginLeft: 25,
-        paddingLeft: 10
     },
     icon: {
         top: -2,
