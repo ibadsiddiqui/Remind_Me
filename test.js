@@ -1,5 +1,5 @@
 const moment = require('moment');
-// const _ = require('lodash')
+const _ = require('lodash')
 // var array = [
 //     {
 //         "taskDate": "Today at 01:01 PM",
@@ -201,14 +201,14 @@ var array = [
     // },
     {
         "data": [
-            {
-                "taskDate": "Tue Aug  6 15:49:00 2019",
-                "taskDescription": "asldmald",
-                "taskEndTime": "",
-                "taskFlag": "Work",
-                "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
-                "taskStartTime": "03:49 P.M",
-            },
+            // {
+            //     "taskDate": "Tue Aug  6 15:49:00 2019",
+            //     "taskDescription": "asldmald",
+            //     "taskEndTime": "",
+            //     "taskFlag": "Work",
+            //     "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
+            //     "taskStartTime": "03:49 P.M",
+            // },
             {
                 "taskDate": "Tue Aug  6 00:00:00 2019",
                 "taskDescription": "asmasmdlkasmd",
@@ -218,12 +218,20 @@ var array = [
                 "taskStartTime": "00:00 A.M",
             },
         ],
-        "date": "08/06/19",
+        "date": "08/08/19",
     },
     {
         "data": [
+            // {
+            //     "taskDate": "Tue Aug  11 15:49:00 2019",
+            //     "taskDescription": "asldmald",
+            //     "taskEndTime": "",
+            //     "taskFlag": "Work",
+            //     "taskID": "6fc09251-93c2-4849-8a9d-a53b3cefa326",
+            //     "taskStartTime": "03:49 P.M",
+            // },
             {
-                "taskDate": "Tue Aug  6 00:00:00 2019",
+                "taskDate": "Tue Aug  11 00:00:00 2019",
                 "taskDescription": "asmasmdlkasmd",
                 "taskEndTime": "",
                 "taskFlag": "Work",
@@ -231,7 +239,7 @@ var array = [
                 "taskStartTime": "00:00 A.M",
             },
         ],
-        "date": "08/11/19",
+        "date": "08/09/19",
     },
 ]
 // const _ = require('lodash')
@@ -267,7 +275,15 @@ var filtered = array.length !== 1 ? array.map((task, index) => {
 
 console.log(filtered.filter((item) => typeof item.data !== "undefined" && typeof item.data.length !== 0 ));
 
-// console.log(array.map((item) => item.data.filter((item) => item.taskFlag === "Personal")));
+console.log(array.map((task, index) => {
+    return task.date === "08/09/19" ?
+        task.data.length !== 1 ? null :
+            {
+                date: task.date,
+                data: task.data.filter((item, _index) => item.taskID !== "eeffa1ef-eef1-4ddd-ada9-aa368b563ef1"),
+            }
+        : task
+}).filter((item) => !_.isEmpty(item)))
 
-
+// console.log(_.isEmpty([]))
 // console.log(typeof array.find((item) => item.date === "08/07/19") === "undefined" ? true : typeof array.find((item) => item.date === "08/06/19"))

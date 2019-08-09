@@ -1,5 +1,6 @@
-import { setTaskDescription, setTaskFlag, setTaskDate, setTaskStartTime, setTaskEndTime, setTaskID, resetTaskDetails } from "../actions/CreateTaskActions";
-import { createTask, toggleTaskStatus, deleteTask, addTaskToDate } from "../actions/TaskListActions";
+import { resetTaskDetails, setTaskDate, setTaskDescription, setTaskEndTime, setTaskFlag, setTaskID, setTaskStartTime } from "../actions/CreateTaskActions";
+import { addTaskToDate, createTask, deleteTask, toggleTaskStatus } from "../actions/TaskListActions";
+import { setProfileImage } from "../actions/UserActions";
 
 export const mapStateToProps = (state) => {
     return {
@@ -11,6 +12,7 @@ export const mapStateToProps = (state) => {
         taskEndTime: state.CreateTask.taskEndTime,
         completed: state.CreateTask.completed,
         TaskList: state.TaskList.TaskList,
+        profileImage: state.User.profileImage,
     }
 }
 
@@ -48,6 +50,11 @@ export const mapDispatchToProps = (dispatch) => {
         },
         deleteTask: (taskDate, taskID) => {
             dispatch(deleteTask(taskDate, taskID))
+        },
+
+        //////////////////////////////////////////
+        setUserProfileImage: (img) => {
+            dispatch(setProfileImage(img))
         },
     }
 };

@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import { View, Text, Dimensions, Image } from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
+import React from 'react';
+import { Dimensions, Image, Text, TouchableOpacity, View } from 'react-native';
 import Images from '../../../assets/images';
 import Colors from '../../../constants/Colors';
-import Locale from '../../../constants/Locale';
 import Layout from '../../../constants/Layout';
+import Locale from '../../../constants/Locale';
 import { filterListWithFlags, filterTodaysTask } from '../../../helpers/listHelpers';
+import { profileImagePicker } from "../../../helpers/pickerhelpers";
 const { width } = Dimensions.get('window');
 
 const IndividualHeader = (props) => {
     const { header } = Images.Dashboard;
-    const { TaskList, flagType } = props
+    const { TaskList, flagType, profileImage } = props
     let list = TaskList.length === 0 ? [] : filterTodaysTask(TaskList).length == 0 ? [] : filterTodaysTask(TaskList)[0].data;
     return (
         <View style={[Layout.tableRow]}>
@@ -19,9 +20,15 @@ const IndividualHeader = (props) => {
                 <Text style={styles.greeting}>{flagType} Tasks</Text>
                 <Text style={styles.taskStatus}>{Locale.Tasks.TaskNotification(filterListWithFlags(list, flagType))}</Text>
             </View>
-            <View style={[Layout.tableCell, styles.userIconContainer]}>
-                <FontAwesome name="user-circle-o" size={40} color="white" />
-            </View>
+            <TouchableOpacity onPress={() => profileImagePicker(props)}
+                style={[Layout.tableCell, styles.userIconContainer]}
+            >
+                {
+                    profileImage !== "" ?
+                        <Image source={{ uri: profileImage }} style={Layout.profileImage} />
+                        : <FontAwesome name="user-circle-o" size={40} color="white" />
+                }
+            </TouchableOpacity>
         </View >
     )
 };

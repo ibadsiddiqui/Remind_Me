@@ -1,14 +1,14 @@
-import React from 'react'
-import { Modal, Image, View, Dimensions, TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { Dimensions, Image, Modal, Text, TouchableOpacity, View } from 'react-native';
 import Images from '../../../assets/images';
-import ReminderDatePicker from "./ReminderDatePicker";
-import ListOfFlag from '../../General/ListofTag';
-import UserInput from './UserInput';
-import { ModalHeader, ModalHeading } from './ModalHeader';
-import TimePicker from './TimePicker'
-import Layout from '../../../constants/Layout';
 import Colors from '../../../constants/Colors';
+import Layout from '../../../constants/Layout';
 import TaskServices from '../../../services/Task';
+import ListOfFlag from '../../General/ListofTag';
+import { ModalHeader, ModalHeading } from './ModalHeader';
+import ReminderDatePicker from "./ReminderDatePicker";
+import TimePicker from './TimePicker';
+import UserInput from './UserInput';
 const { width } = Dimensions.get('window')
 
 const DisplayModal = (props) => {

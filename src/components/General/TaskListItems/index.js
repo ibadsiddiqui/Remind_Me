@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import { MaterialIcons } from '@expo/vector-icons'
-import { View, Text, TouchableOpacity } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+import React from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import Colors from '../../../constants/Colors';
 import Layout from '../../../constants/Layout';
-import styles from './styles';
+import { getLocaleDateString } from '../../../helpers/timeConverter';
 import SwipeableRow from '../SwipeableRow';
+import styles from './styles';
 
 const TaskListItems = (props) => {
     const { item, toggleTaskStatus } = props;
     const { taskFlag, taskID, completed, taskStartTime, taskDescription, taskDate } = item;
-    const sectionTitleForTaskList = new Date(taskDate).toLocaleDateString();
+    const sectionTitleForTaskList = getLocaleDateString(taskDate);
     return (
         <View style={styles.container}>
             <SwipeableRow {...props}>

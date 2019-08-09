@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import { View, Text, Dimensions, Image } from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
+import React from 'react';
+import { Dimensions, Image, Text, TouchableOpacity, View } from 'react-native';
 import Images from '../../../assets/images';
 import Colors from '../../../constants/Colors';
-import Locale from '../../../constants/Locale';
 import Layout from '../../../constants/Layout';
+import Locale from '../../../constants/Locale';
 import { filterTodaysTask } from '../../../helpers/listHelpers';
+import { profileImagePicker } from "../../../helpers/pickerhelpers";
 const { width } = Dimensions.get('window');
 
 const Header = (props) => {
     const { header } = Images.Dashboard;
-    const { TaskList } = props;
+    const { TaskList, profileImage } = props;
     let condition = TaskList.length === 0 ? [] : filterTodaysTask(TaskList).length == 0 ? [] : filterTodaysTask(TaskList)[0].data;
     let listofTasks = condition;
     return (
@@ -20,8 +21,16 @@ const Header = (props) => {
                 <Text style={styles.greeting}>Hello Brenda!</Text>
                 <Text style={styles.taskStatus}>{Locale.Tasks.TaskNotification(listofTasks)}</Text>
             </View>
-            <View style={[Layout.tableCell, styles.userIconContainer]}>
-                <FontAwesome name="user-circle-o" size={40} color="white" />
+            <View style={[Layout.tableCell, { alignItems: 'flex-end' }]}>
+                <TouchableOpacity onPress={() => profileImagePicker(props)}
+                    style={styles.userIconContainer}
+                >
+                    {
+                        (profileImage !== "" && typeof profileImage !== "undefined") ?
+                            <Image source={{ uri: profileImage }} style={Layout.profileImage} />
+                            : <FontAwesome name="user-circle-o" size={40} color="white" />
+                    }
+                </TouchableOpacity>
             </View>
         </View >
     )
@@ -33,8 +42,10 @@ const styles = {
     },
     userIconContainer: {
         alignItems: 'flex-end',
-        paddingHorizontal: 10,
-        marginTop: width * 0.12
+        marginTop: width * 0.12,
+        marginRight: 15,
+        width: 45,
+        height: 45,
     },
     headerContainer: {
         justifyContent: 'center',

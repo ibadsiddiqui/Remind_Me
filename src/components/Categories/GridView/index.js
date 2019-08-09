@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import Categories from '../../../constants/CategoryTabs';
-import { tabMappers } from '../../../helpers/listHelpers';
+import Tab from './Tab';
 
 const GridView = (props) => {
     const { firstRow, secondRow, thirdRow } = Categories
@@ -13,13 +13,13 @@ const GridView = (props) => {
                 </View>
             </View>
             <View style={styles.rowContainer}>
-                {tabMappers(firstRow, props)}
+                {firstRow.map((item, key) => <Tab key={key} item={item} {...props} />)}
             </View>
             <View style={styles.rowContainer}>
-                {tabMappers(secondRow, props)}
+                {secondRow.map((item, key) => <Tab key={key} item={item} {...props} />)}
             </View>
             <View style={styles.rowContainer}>
-                {tabMappers(thirdRow, props)}
+                {thirdRow.map((item, key) => <Tab key={key} item={item} {...props} />)}
             </View>
         </View>
     )

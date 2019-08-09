@@ -1,3 +1,6 @@
+// user action types
+export const SET_PROFILE_IMAGE = "SET_PROFILE_IMAGE";
+
 // fill Details flag
 export const SET_TASK_ID = "SET_TASK_ID";
 export const SET_TASK_DESCRIPTION = "SET_TASK_DESCRIPTION";

@@ -1,10 +1,11 @@
+import AntDesign from '@expo/vector-icons/AntDesign';
 import React, { Component } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
-import AntDesign from '@expo/vector-icons/AntDesign'
 import { RectButton } from 'react-native-gesture-handler';
-
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import Colors from '../../../constants/Colors';
+import { getLocaleDateString } from '../../../helpers/timeConverter';
+
 
 export default class SwipeableRow extends Component {
     // renderLeftActions = (progress, dragX) => {
@@ -62,7 +63,7 @@ export default class SwipeableRow extends Component {
     close = () => {
         const { deleteTask, item } = this.props;
         const { taskID, taskDate } = item;
-        const sectionTitleForTaskList = new Date(taskDate).toLocaleDateString();
+        const sectionTitleForTaskList = getLocaleDateString(taskDate);
         this._swipeableRow.close();
         deleteTask(sectionTitleForTaskList, taskID);
     };
@@ -74,7 +75,6 @@ export default class SwipeableRow extends Component {
                 friction={1}
                 leftThreshold={10}
                 rightThreshold={10}
-                // renderLeftActions={this.renderLeftActions}
                 renderRightActions={this.renderRightActions}
             >
                 {children}
