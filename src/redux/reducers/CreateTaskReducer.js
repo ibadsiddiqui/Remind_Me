@@ -45,7 +45,7 @@ const CreateTaskReducer = (state = initialState, action) => {
         taskDescription: "",
         taskFlag: "",
         taskDate: new Date().toLocaleString(),
-        taskStartTime: "00:00 A.M",
+        taskStartTime: "00:00 AM",
         taskEndTime: "",
         completed: false,
       }

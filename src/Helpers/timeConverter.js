@@ -3,19 +3,19 @@ import moment from "moment";
 export function hour24Converter(hour, minute) {
     if (hour > 9) {
         if (hour >= 10 && hour < 12) {
-            if (minute > 9) return (hour % 12).toString() + ":" + minute.toString() + " A.M";
-            else return (hour % 12).toString() + ":0" + minute.toString() + " A.M";
+            if (minute > 9) return (hour % 12).toString() + ":" + minute.toString() + " AM";
+            else return (hour % 12).toString() + ":0" + minute.toString() + " AM";
         }
         else if (hour <= 23 && hour > 21) {
-            if (minute > 9) return (hour % 12).toString() + ":" + minute.toString() + " P.M";
-            else return (hour % 12).toString() + ":0" + minute.toString() + " P.M";
+            if (minute > 9) return (hour % 12).toString() + ":" + minute.toString() + " PM";
+            else return (hour % 12).toString() + ":0" + minute.toString() + " PM";
         } else {
-            if (minute > 9) return "0" + (hour % 12).toString() + ":" + minute.toString() + " P.M";
-            else return "0" + (hour % 12).toString() + ":0" + minute.toString() + " P.M";
+            if (minute > 9) return "0" + (hour % 12).toString() + ":" + minute.toString() + " PM";
+            else return "0" + (hour % 12).toString() + ":0" + minute.toString() + " PM";
         }
     } else if (hour < 10) {
-        if (minute > 9) return "0" + hour.toString() + ":" + minute.toString() + " A.M";
-        else return "0" + hour.toString() + ":0" + minute.toString() + " A.M";
+        if (minute > 9) return "0" + hour.toString() + ":" + minute.toString() + " AM";
+        else return "0" + hour.toString() + ":0" + minute.toString() + " AM";
     }
 }
 
@@ -24,7 +24,7 @@ export function replaceTaskTimeWithStartTime(props) {
     let starttimeHours = taskStartTime.slice(0, 2)
     let starttimeMinutes = getSlicedMinutesFromFalse24Hours(taskStartTime);
     let newDate;
-    if (taskStartTime.includes("A.M.")) newDate = getLocaleString(setMinutesForDate(setHoursForDate(taskDate, starttimeHours), starttimeMinutes));
+    if (taskStartTime.includes("AM.")) newDate = getLocaleString(setMinutesForDate(setHoursForDate(taskDate, starttimeHours), starttimeMinutes));
     else newDate = getLocaleString(setMinutesForDate(setHoursForDate(taskDate, starttimeHours, 12), starttimeMinutes));
     setTaskDate(newDate);
 }
