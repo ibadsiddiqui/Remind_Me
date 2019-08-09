@@ -23,7 +23,7 @@ const Colors = {
     personalCircle: "rgba(255,238,155,0.36)",
     workCirlce: "rgba(181,255,155,0.36)",
     meetingCirlce: "rgba(255,155,205,0.36)",
-    studyCirlce: "#3044F2",
+    studyCirlce: "rgba(48,68,242,0.36)",
     shoppingCirlce: "rgba(255,208,155,0.36)",
     partyCirlce: "rgba(155,255,248,0.36)",
     ////////////////////////////////
