@@ -15,7 +15,7 @@ const DisplayModal = (props) => {
   const { modalVisible } = props
   return (
     <Modal transparent={true} visible={modalVisible}
-      animationType="fade"
+      animationType="slide"
       onRequestClose={() => { }}
     >
       <View style={styles.container}>
