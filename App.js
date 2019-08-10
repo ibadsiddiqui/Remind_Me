@@ -8,6 +8,7 @@ import { cachedImages } from './src/assets/images';
 import firebaseConfig from './src/constants/Firebase';
 import * as firebase from 'firebase';
 import Colors from './src/constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
 
 const store = configureStore().store
 export default class App extends React.Component {
@@ -49,6 +50,9 @@ export default class App extends React.Component {
       "rubik-medium": require('./src/assets/fonts/Rubik-Medium.ttf'),
       "rubik-regular": require('./src/assets/fonts/Rubik-Regular.ttf'),
       "opensans-regular": require('./src/assets/fonts/OpenSans-Regular.ttf'),
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      ...Ionicons.font,
     });
   }
 
