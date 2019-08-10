@@ -6,6 +6,6 @@ export default createStackNavigator(
     {
         EditTask: EditTaskScreen
     }, {
-        // headerMode: "none",
+        headerMode: "none",
     }
 )

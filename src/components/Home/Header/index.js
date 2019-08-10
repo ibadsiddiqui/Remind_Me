@@ -55,7 +55,7 @@ const styles = {
         top: 50
     },
     greeting: {
-        fontFamily: "rubik-regular",
+        fontFamily: "rubik-medium",
         fontSize: 17,
         color: Colors.white,
     },
