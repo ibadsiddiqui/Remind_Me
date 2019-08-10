@@ -4,6 +4,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import Images from '../../assets/images';
 import Colors from '../../constants/Colors';
 import Locale from './../../constants/Locale'
+import ThemeButton from '../../components/General/ThemeButton';
 const { width } = Dimensions.get('window');
 export default class OnboardingScreen extends Component {
 
@@ -33,13 +34,9 @@ export default class OnboardingScreen extends Component {
                 <View style={styles.descriptionContainer}>
                     <Text style={styles.descriptionText}>{Desc}</Text>
                 </View>
-                <View style={styles.btnContainer}>
-                    <TouchableOpacity style={styles.getStartedBtn}
-                        onPress={() => navigate("Dashboard")}
-                    >
-                        <Text style={styles.getStartedText}>{getStartedText}</Text>
-                    </TouchableOpacity>
-                </View>
+                <ThemeButton title={getStartedText}
+                    onPress={() => navigate("Dashboard")}
+                />
 
             </View>
         )
@@ -47,12 +44,6 @@ export default class OnboardingScreen extends Component {
 }
 
 const styles = {
-    btnContainer: {
-        alignSelf: 'center',
-        justifyContent: 'center',
-        marginTop: 120,
-        marginBottom: 20
-    },
     container: {
         flex: 1,
         justifyContent: 'center'
@@ -69,20 +60,6 @@ const styles = {
         textAlign: 'center',
         fontFamily: "opensans-regular",
         color: Colors.descriptionColor
-    },
-    getStartedBtn: {
-        width: 258,
-        height: 52,
-        backgroundColor: Colors.onboardingBtnBackground,
-        justifyContent: 'center',
-        borderRadius: 10
-    },
-    getStartedText: {
-        color: Colors.white,
-        fontSize: 15,
-        textAlign: 'center',
-        fontFamily: "opensans-regular",
-        fontWeight: '700'
     },
     heading: {
         fontSize: 22,
