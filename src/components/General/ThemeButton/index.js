@@ -4,7 +4,7 @@ import Colors from '../../../constants/Colors';
 const ThemeButton = (props) => {
     const { onPress, title } = props;
     return (
-        <View style={styles.btnContainer}>
+        <View style={[styles.btnContainer, props.btnContainerStyle]}>
             <TouchableOpacity style={styles.getStartedBtn} onPress={onPress}>
                 <Text style={styles.getStartedText}>{title}</Text>
             </TouchableOpacity>
