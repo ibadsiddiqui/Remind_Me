@@ -1,4 +1,3 @@
-
 const Colors = {
     transparent: "transparent",
     activeTintColor: "#5F87E7",
@@ -72,4 +71,36 @@ export function renderColoredCircle(color) {
             ...style,
             backgroundColor: Colors.partyFlag
         }
+}
+
+export const coloredCategoryButton = (flag) => {
+    switch (flag) {
+        case "Personal":
+            return {
+                backgroundColor: Colors.personalFlag,
+            }
+        case "Work":
+            return {
+                backgroundColor: Colors.workFlag,
+            }
+        case "Meeting":
+            return {
+                backgroundColor: Colors.meetingFlag,
+            }
+        case "Study":
+            return {
+                backgroundColor: Colors.studyFlag,
+            }
+        case "Shopping":
+            return {
+                backgroundColor: Colors.shoppingFlag,
+
+            }
+        case "Party":
+            return {
+                backgroundColor: Colors.partyFlag,
+            }
+        default:
+            return;
+    }
 }
