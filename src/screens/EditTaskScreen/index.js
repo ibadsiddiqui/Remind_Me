@@ -1,16 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps } from '../../redux/dispatchers';
-import { View, Text, Dimensions, TextInput } from 'react-native'
-import Colors, { renderColoredCircle, coloredCategoryButton } from '../../constants/Colors';
+import { View, Text } from 'react-native'
+import Colors, { coloredCategoryButton } from '../../constants/Colors';
 import HeaderForTaskDetails from '../../components/EditTask/header';
 import Layout from '../../constants/Layout';
-const { height, width } = Dimensions.get('window');
-import { Label, Item, Content, Textarea, Form } from "native-base";
-import ThemeButton from '../../components/General/ThemeButton';
+import { Label, Content, Textarea, Form } from "native-base";
+import FloatingButton from '../../components/EditTask/FloatingButton';
+
+
 class EditTaskScreen extends React.Component {
+
+    navigateBack = () => this.props.navigation.navigate("Dashboard");
+
     render() {
         const item = this.props.navigation.getParam("itemDetails", "").item;
+
         return (
             <View style={styles.container}>
                 <HeaderForTaskDetails {...this.props} />
@@ -57,9 +62,12 @@ class EditTaskScreen extends React.Component {
                         </Form>
                     </Content>
                 </View>
-                <ThemeButton btnContainerStyle={{ marginTop: -30, margniBottom: 0, flex: 1.5 }}
-                    onPress={() => { }} title="Update" />
-                <View style={{ flex: 0.25 }} />
+
+                <View style={{ flex: 1.25, paddingHorizontal: 10 }} >
+                    <FloatingButton check={true} color={Colors.white}
+                        onPress={this.navigateBack} />
+                    <FloatingButton color={Colors.taskButton} />
+                </View>
             </View >
         );
     }
